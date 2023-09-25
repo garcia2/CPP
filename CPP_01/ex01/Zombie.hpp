@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.hpp                                 :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 19:23:41 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/25 18:47:23 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_TEMPLATE_HPP
-# define CLASS_TEMPLACE_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include <iostream>
 #include <string>
+#include <iostream>
 
-class ClassTemplate {
+class Zombie {
 
 	private:
 		
 		// Attributes
-
+		std::string	_name;
+		
 		// Functions
 
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(void);                          // Cannonical
-		ClassTemplate(ClassTemplate const & src);     // Cannonical
-		~ClassTemplate(void);                         // Cannonical
+		Zombie(void);
+		Zombie(std::string name);
+		~Zombie(void);
 
 		// Functions
-
-		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & rhs); // Cannonical
-
+		void	announce(void);
+		
 		// Getters
 
 		// Setters
+		void	setName(std::string name);
 
 };
+
+Zombie*	zombieHorde(int N, std::string name);
 
 #endif

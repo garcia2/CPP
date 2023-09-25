@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 17:36:31 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/25 19:44:55 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 ClassTemplate::ClassTemplate(void) {
 	
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClassTemplate constructor called" << std::endl;
 
 	return;
 }	// Cannonical
 
 ClassTemplate::ClassTemplate(ClassTemplate const & src) {
 	
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy ClassTemplate constructor called" << std::endl;
 	*this = src;
 	
 	return;
@@ -31,7 +31,7 @@ ClassTemplate::ClassTemplate(ClassTemplate const & src) {
 
 ClassTemplate::~ClassTemplate(void) {
 	
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClassTemplate Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -66,7 +66,7 @@ ClassTemplate::~ClassTemplate(void) {
 
 ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & rhs) {
 	
-	std::cout << "Assignment operator called" << std::endl;
+	std::cout << "Assignment ClassTemplate '=' operator called" << std::endl;
 	if (this != &rhs) {
 		
 		// this->_param = rhs.getParam();
@@ -94,5 +94,3 @@ ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & rhs) {
 /*--|Class Attributes|--------------------------------------------------------*/
 
 /*--------------------------------------------------------|Class Attributes|--*/
-
-

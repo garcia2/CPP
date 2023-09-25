@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.hpp                                 :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 19:23:41 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/25 22:01:19 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_TEMPLATE_HPP
-# define CLASS_TEMPLACE_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
 #include <iostream>
 #include <string>
 
-class ClassTemplate {
+class Weapon {
 
 	private:
 		
 		// Attributes
+		std::string	_type;
 
 		// Functions
 
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(void);                          // Cannonical
-		ClassTemplate(ClassTemplate const & src);     // Cannonical
-		~ClassTemplate(void);                         // Cannonical
+		Weapon(void);                          // Cannonical
+		Weapon(std::string type);
+		~Weapon(void);                         // Cannonical
 
 		// Functions
 
 		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & rhs); // Cannonical
 
 		// Getters
+		std::string getType(void) const;
 
 		// Setters
-
+		void	setType(std::string type);
 };
 
 #endif

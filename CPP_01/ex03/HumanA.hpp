@@ -1,44 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.hpp                                 :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 19:23:41 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/25 22:05:50 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_TEMPLATE_HPP
-# define CLASS_TEMPLACE_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
 #include <iostream>
 #include <string>
+#include "Weapon.hpp"
 
-class ClassTemplate {
+class HumanA {
 
 	private:
 		
 		// Attributes
-
+		std::string	_name;
+		Weapon&		_weapon;
 		// Functions
 
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(void);                          // Cannonical
-		ClassTemplate(ClassTemplate const & src);     // Cannonical
-		~ClassTemplate(void);                         // Cannonical
+		HumanA(std::string name, Weapon& weapon);   // Cannonical
+		~HumanA(void);                         		// Cannonical
 
 		// Functions
-
+		void	attack(void) const;
+		
 		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & rhs); // Cannonical
 
 		// Getters
 
 		// Setters
+		void	setWeapon(Weapon &weapon);
 
 };
 
