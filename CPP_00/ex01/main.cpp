@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:26:34 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 00:22:20 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/25 13:58:32 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	prompt(PhoneBook phoneBook) {
 int	main(void) {
 	
 	PhoneBook phoneBook;
+	phoneBook.fill();
 	prompt(phoneBook);
 	
 	return (0);

@@ -1,3 +1,7 @@
 .vscode
 a.out
+*.subject.pdf
 megaphone
+phonebook
+account
+*.log

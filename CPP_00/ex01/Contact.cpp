@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 00:30:47 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/25 14:54:21 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,64 @@
 
 Contact::Contact (void) { 
 	
-	//std::cout << "Contact contructor called" << std::endl;
-	return;
+	//std::cout << "Contact " << " contructor called" << std::endl;
 }
 
-Contact::Contact(int index, std::string firstName, std::string lastName, std::string nickName) {
+Contact::Contact(int index, std::string firstName, std::string lastName, std::string nickName, std::string phoneNumber, std::string darkestSecret) {
 	
 	//std::cout << "Parametric contact contructor called" << std::endl;
 	this->_index = index;
 	this->_firstName = firstName;
 	this->_lastName = lastName;
 	this->_nickName = nickName;
-	
-	return;
+	this->_phoneNumber = phoneNumber;
+	this->_darkestSecret = darkestSecret;
 }
 
 Contact::~Contact(void) {
 	
 	//std::cout << "Contact destructor called" << std::endl;
-	return;
 }
+
+
+// Object functions
+
+// Object functions :: Public
+
+void	Contact::printLine(int padding) const {
+
+	std::cout << "|" << std::setw(padding) << this->_index << "|";
+	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_firstName, padding) << "|";
+	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_lastName, padding) << "|";
+	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_nickName, padding) << "|" << std::endl;
+}
+
+void	Contact::printList(void) const {
+	
+	std::cout << std::endl << "- Contact Informations - " << std::endl;
+	std::cout << "	index          : " << this->_index << std::endl;
+	std::cout << "	first name     : " << this->_firstName << std::endl;
+	std::cout << "	last name      : " << this->_lastName << std::endl;
+	std::cout << "	nickname       : " << this->_nickName << std::endl;
+	std::cout << "	phone number   : " << this->_phoneNumber << std::endl;
+	std::cout << "	darkest secret : " << this->_darkestSecret << std::endl;
+}
+
+
+// Class functions
+
+// Class functions :: Public
+
+void	Contact::printFirstLine(int padding) {
+
+	std::cout << "|" << std::setw(padding) << "index" << "|";
+	std::cout << std::setw(padding) << "first name" << "|";
+	std::cout << std::setw(padding) << "last name" << "|";
+	std::cout << std::setw(padding) << "nickname" << "|" << std::endl;
+}
+
+
+// Class functions :: Private
 
 std::string	Contact::getTruncatedArg(std::string str, int padding) {
 
@@ -47,35 +85,9 @@ std::string	Contact::getTruncatedArg(std::string str, int padding) {
 		newStr = str;
 	return (newStr);
 }
- 
 
-void	Contact::printLine(int padding) {
 
-	std::cout << "|" << std::setw(padding) << this->_index << "|";
-	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_firstName, padding) << "|";
-	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_lastName, padding) << "|";
-	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_nickName, padding) << "|" << std::endl;
-}
-
-void	Contact::printFirstLine(int padding) {
-
-	std::cout << "|" << std::setw(padding) << "Index" << "|";
-	std::cout << std::setw(padding) << "first name" << "|";
-	std::cout << std::setw(padding) << "last name" << "|";
-	std::cout << std::setw(padding) << "nickname" << "|" << std::endl;
-}
-
-void	Contact::printList(void) {
-	
-	std::cout << "index          : " << this->_index << std::endl;
-	std::cout << "first name     : " << this->_firstName << std::endl;
-	std::cout << "last name      : " << this->_lastName << std::endl;
-	std::cout << "nickname       : " << this->_nickName << std::endl;
-	std::cout << "phone number   : " << this->_phoneNumber << std::endl;
-	std::cout << "darkest secret : " << this->_darkestSecret << std::endl;
-}
-
-// Getters and setters
+// Getters
 
 int	Contact::getIndex(void) const {
 
@@ -97,6 +109,9 @@ std::string	Contact::getNickName(void) const {
 std::string	Contact::getPhoneNumber(void) const {
 	return (this->_nickName);
 }
+
+
+// Setters
 
 void	Contact::setIndex(int index) {
 	

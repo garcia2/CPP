@@ -1,9 +1,11 @@
-NAME		= megaphone
+NAME		= phonebook
 SRCSDIR		= .
 OBJSDIR		= objs
 INCLUDES	= .
 
-SRCS		= megaphone.cpp
+SRCS		= Contact.cpp \
+			  PhoneBook.cpp \
+			  main.cpp
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98

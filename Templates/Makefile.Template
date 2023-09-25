@@ -1,10 +1,9 @@
-NAME		= account
+NAME		= BIN_NAME
 SRCSDIR		= .
 OBJSDIR		= objs
 INCLUDES	= .
 
-SRCS		= Account.cpp \
-			tests.cpp
+SRCS		= Class.Template.cpp 
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
