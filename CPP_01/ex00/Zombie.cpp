@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.cpp                                 :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 17:36:31 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/25 17:41:14 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Class.Template.hpp"
+#include "Zombie.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ClassTemplate::ClassTemplate(void) {
-	
-	std::cout << "Default constructor called" << std::endl;
+Zombie::Zombie(void) : _name("Kevin") {
 
 	return;
-}	// Cannonical
+}
 
-ClassTemplate::ClassTemplate(ClassTemplate const & src) {
-	
-	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+Zombie::Zombie(std::string name) : _name(name) {
 	
 	return;
-}	// Cannonical
+}
 
-ClassTemplate::~ClassTemplate(void) {
+Zombie::~Zombie(void) {
 	
-	std::cout << "Destructor called" << std::endl;
-
+	std::cout << "Zombie " << this->_name  << " is destroyed" << std::endl;
 	return;
-}	// Cannonical
+}
 
 /*----------------------------------------------|Constructors & Destructors|--*/
 
 
 
 /*--|Object functions :: Public|----------------------------------------------*/
+
+void	Zombie::announce(void) {
+	
+	std::cout << this->_name << ": : BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
 /*----------------------------------------------|Object functions :: Public|--*/
 
@@ -59,24 +58,6 @@ ClassTemplate::~ClassTemplate(void) {
 /*--|Class functions :: Private|----------------------------------------------*/
 
 /*----------------------------------------------|Class functions :: Private|--*/
-
-
-
-/*--|Operators Overload|------------------------------------------------------*/
-
-ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & rhs) {
-	
-	std::cout << "Assignment operator called" << std::endl;
-	if (this != &rhs) {
-		
-		// this->_param = rhs.getParam();
-		// ...
-	}
-
-	return (*this);
-}
-
-/*------------------------------------------------------|Operators Overload|--*/
 
 
 
