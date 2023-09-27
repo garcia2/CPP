@@ -1,80 +1,92 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.cpp                                 :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/27 16:55:39 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/27 17:54:56 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Class.Template.hpp"
+#include "Fixed.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ClassTemplate::ClassTemplate(void) {
+Fixed::Fixed(void) : rawBits(0) {
 	
-	std::cout << "Default ClassTemplate constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 
 	return;
 }	// Cannonical
 
-ClassTemplate::ClassTemplate(ClassTemplate const & src) {
+Fixed::Fixed(int const raw) {
+
+	std::cout << "Int constructor called" << std::endl;
+
+	int	fixedInt = raw * (1 << Fixed::_nbFractionalBits);
+	this->rawBits = fixedInt;
+	return;
+}
+Fixed::Fixed(float const raw) {
+
+	std::cout << "Float constructor called" << std::endl;
+	float	fixed_float = raw * (1 << Fixed::_nbFractionalBits);
+    this->rawBits = roundf(fixed_float);
+	return;
+}
+
+Fixed::Fixed(Fixed const & src) {
 	
-	std::cout << "Copy ClassTemplate constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 	
 	return;
 }	// Cannonical
 
-ClassTemplate::~ClassTemplate(void) {
+Fixed::~Fixed(void) {
 	
-	std::cout << "ClassTemplate Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
 
 /*----------------------------------------------|Constructors & Destructors|--*/
 
-
-
 /*--|Object functions :: Public|----------------------------------------------*/
+
+float	Fixed::toFloat(void) const {
+
+	return ((float)this->rawBits / (1 << Fixed::_nbFractionalBits));
+}
+
+int		Fixed::toInt(void) const {
+
+	return (this->rawBits);
+}
 
 /*----------------------------------------------|Object functions :: Public|--*/
 
 
-/*--|Object functions :: Private|---------------------------------------------*/
-
-/*---------------------------------------------|Object functions :: Private|--*/
-
-
-
-/*--|Class functions :: Public|-----------------------------------------------*/
-
-/*-----------------------------------------------|Class functions :: Public|--*/
-
-
-/*--|Class functions :: Private|----------------------------------------------*/
-
-/*----------------------------------------------|Class functions :: Private|--*/
-
-
-
 /*--|Operators Overload|------------------------------------------------------*/
 
-ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & rhs) {
+Fixed &	Fixed::operator=(Fixed const & rhs) {
 	
-	std::cout << "Copy assignment ClassTemplate operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs) {
 		
-		// this->_param = rhs.getParam();
-		// ...
+		this->rawBits = rhs.getRawBits();
 	}
 
 	return (*this);
 }	// Cannonical
+
+std::ostream &	operator<<(std::ostream & o, Fixed const & i) {
+
+	o << i.toFloat();
+	return (o);
+}
 
 /*------------------------------------------------------|Operators Overload|--*/
 
@@ -82,15 +94,29 @@ ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & rhs) {
 
 /*--|Getters|-----------------------------------------------------------------*/
 
+int	Fixed::getRawBits(void) const {
+
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->rawBits);
+}
+
 /*-----------------------------------------------------------------|Setters|--*/
 
 
 /*--|Setters|-----------------------------------------------------------------*/
+
+void	Fixed::setRawBits(int const raw) {
+	
+	std::cout << "setRawBits member function called" << std::endl;
+	this->rawBits = raw;
+}
 
 /*-----------------------------------------------------------------|Setters|--*/
 
 
 
 /*--|Class Attributes|--------------------------------------------------------*/
+
+int const	Fixed::_nbFractionalBits = 8;
 
 /*--------------------------------------------------------|Class Attributes|--*/
