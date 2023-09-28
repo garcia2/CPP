@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 13:58:27 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 15:13:12 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 
 	private:
 		
@@ -26,7 +26,6 @@ class ScavTrap : public ClapTrap {
 		// Functions
 
 		// Hidden Constructors
-		ScavTrap(void);						// Cannonical
 
 	protected:
 		
@@ -35,6 +34,7 @@ class ScavTrap : public ClapTrap {
 		// Functions
 
 		// Hidden Constructor (except for inheritance)
+		ScavTrap(void);						// Cannonical
 
 	public:
 

@@ -1,48 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 14:24:48 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 15:50:20 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ScavTrap::ScavTrap(void) {
+DiamondTrap::DiamondTrap(void) {
 	
-	std::cout << "Default ScavTrap constructor called" << std::endl;
+	std::cout << "Default DiamondTrap constructor called" << std::endl;
 	
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamages = 20;
+	std::cout << "	--temp FragTrap" << std::endl;
+	FragTrap f("");
+	std::cout << "	--END temp FragTrap" << std::endl;
+	std::cout << "	--temp ScavTrap" << std::endl;
+	ScavTrap s("");
+	std::cout << "	--END temp ScavTrap" << std::endl;
+
+	this->FragTrap::_hitPoints = f.getHitPoints();
+	this->ScavTrap::_energyPoints = s.getEnergyPoints();
+	this->FragTrap::_attackDamages = f.getAttackDamages();
 
 	return;
 }	// Cannonical (Private)
 
-ScavTrap::ScavTrap(std::string name) {
+DiamondTrap::DiamondTrap(std::string name) {
 
-	std::cout << "Parametric ScavTrap " << name << " constructor called" << std::endl;
-	*this = ScavTrap();
+	std::cout << "Parametric DiamondTrap " << name << " constructor called" << std::endl;
+	*this = DiamondTrap();
 	this->_name = name;
+	this->ClapTrap::_name = name + "_clap_name";
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src) {
+DiamondTrap::DiamondTrap(DiamondTrap const & src) {
 	
-	std::cout << "Copy ScavTrap constructor called" << std::endl;
+	std::cout << "Copy DiamondTrap constructor called" << std::endl;
 	*this = src;
 	
 	return;
 }	// Cannonical
 
-ScavTrap::~ScavTrap(void) {
+DiamondTrap::~DiamondTrap(void) {
 	
-	std::cout << "ScavTrap " << this->_name << " Destructor called" << std::endl;
+	std::cout << "DiamondTrap " << this->_name << " Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -53,16 +61,10 @@ ScavTrap::~ScavTrap(void) {
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
-void	ScavTrap::guardGate(void) {
+void 	DiamondTrap::whoAmI(void) const {
 
-	if (this->_hitPoints == 0 || this->_energyPoints == 0)
-	{
-		std::cout << this->_name << " can't be in Gate Keeper mode, ";
-		std::cout << ((this->_hitPoints == 0) ? "he's dead..." : "he has no energy.") << std::endl;
-		return ;
-	}
-	std::cout << this->_name << " is now in Gate Keeper mode !" << std::endl;
-	this->_energyPoints--;
+	std::cout << "My name is " << this->_name;
+	std::cout << " but i'm also known as " << this->ClapTrap::_name << std::endl;
 }
 
 /*----------------------------------------------|Object functions :: Public|--*/
@@ -87,12 +89,13 @@ void	ScavTrap::guardGate(void) {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-ScavTrap &	ScavTrap::operator=(ScavTrap const & other) {
+DiamondTrap &	DiamondTrap::operator=(DiamondTrap const & other) {
 	
-	std::cout << "Copy assignment ScavTrap operator called" << std::endl;
+	std::cout << "Copy assignment DiamondTrap operator called" << std::endl;
 	if (this != &other) {
 		
 		this->_name = other.getName();
+		this->ClapTrap::_name = other.ClapTrap::getName();
 		this->_hitPoints = other.getHitPoints();
 		this->_energyPoints = other.getEnergyPoints();
 		this->_attackDamages = other.getAttackDamages();
@@ -106,6 +109,11 @@ ScavTrap &	ScavTrap::operator=(ScavTrap const & other) {
 
 
 /*--|Getters|-----------------------------------------------------------------*/
+
+std::string	DiamondTrap::getName(void) const {
+
+	return (this->_name);
+}
 
 /*-----------------------------------------------------------------|Getters|--*/
 

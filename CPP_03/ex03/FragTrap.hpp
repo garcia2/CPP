@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 13:58:27 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 15:13:04 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include <iostream>
 #include <string>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 
 	private:
 		
@@ -26,7 +26,6 @@ class ScavTrap : public ClapTrap {
 		// Functions
 
 		// Hidden Constructors
-		ScavTrap(void);						// Cannonical
 
 	protected:
 		
@@ -35,19 +34,20 @@ class ScavTrap : public ClapTrap {
 		// Functions
 
 		// Hidden Constructor (except for inheritance)
+		FragTrap(void);						// Cannonical
 
 	public:
 
 		// Constructors & Destructors
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const & src);		// Cannonical
-		~ScavTrap(void);					// Cannonical
+		FragTrap(std::string name);
+		FragTrap(FragTrap const & src);		// Cannonical
+		~FragTrap(void);					// Cannonical
 
 		// Functions
-		void	guardGate(void);
+		void	highFive(void);
 
 		// Operators overload
-		ScavTrap &	operator=(ScavTrap const & rhs); // Cannonical
+		FragTrap &	operator=(FragTrap const & rhs); // Cannonical
 
 		// Getters;
 

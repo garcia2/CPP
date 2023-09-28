@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 13:58:27 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 12:00:30 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 #include <iostream>
 #include <string>
-#include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ClapTrap {
 
 	private:
 		
@@ -26,32 +25,44 @@ class ScavTrap : public ClapTrap {
 		// Functions
 
 		// Hidden Constructors
-		ScavTrap(void);						// Cannonical
 
 	protected:
 		
 		// Attributes
+		std::string		_name;
+		unsigned int	_hitPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamages;
 
 		// Functions
 
 		// Hidden Constructor (except for inheritance)
-
+		ClapTrap(void);						// Cannonical
+	
 	public:
 
 		// Constructors & Destructors
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const & src);		// Cannonical
-		~ScavTrap(void);					// Cannonical
+		ClapTrap(std::string name);
+		ClapTrap(ClapTrap const & src);		// Cannonical
+		~ClapTrap(void);					// Cannonical
 
 		// Functions
-		void	guardGate(void);
+		void 	attack(const std::string& target);
+		void 	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+		void	toPrint() const;
 
 		// Operators overload
-		ScavTrap &	operator=(ScavTrap const & rhs); // Cannonical
+		ClapTrap &	operator=(ClapTrap const & rhs); // Cannonical
 
-		// Getters;
+		// Getters
+		std::string		getName() const;
+		unsigned int	getHitPoints() const;
+		unsigned int	getEnergyPoints() const;
+		unsigned int	getAttackDamages() const;
 
 		// Setters
+		void	setAttackDamages(unsigned int attackDamages);
 
 };
 

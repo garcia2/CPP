@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 13:58:27 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 15:39:34 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
 #include <iostream>
 #include <string>
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class DiamondTrap : public ScavTrap, public FragTrap {
 
 	private:
 		
 		// Attributes
+		std::string	_name;
 
 		// Functions
 
 		// Hidden Constructors
-		ScavTrap(void);						// Cannonical
+		DiamondTrap(void);						// Cannonical
 
 	protected:
 		
@@ -39,17 +41,18 @@ class ScavTrap : public ClapTrap {
 	public:
 
 		// Constructors & Destructors
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const & src);		// Cannonical
-		~ScavTrap(void);					// Cannonical
+		DiamondTrap(std::string name);
+		DiamondTrap(DiamondTrap const & src);	// Cannonical
+		~DiamondTrap(void);						// Cannonical
 
 		// Functions
-		void	guardGate(void);
+		void	whoAmI(void) const;
 
 		// Operators overload
-		ScavTrap &	operator=(ScavTrap const & rhs); // Cannonical
+		DiamondTrap &	operator=(DiamondTrap const & rhs); // Cannonical
 
 		// Getters;
+		std::string	getName(void) const;
 
 		// Setters
 

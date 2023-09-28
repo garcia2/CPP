@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 09:53:44 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 11:33:30 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 14:13:02 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,11 @@ void	main_attack(ClapTrap& attack, ClapTrap& victim) {
 
 int	main(void) {
 
-	ClapTrap billy = ClapTrap("Billy");
-	ClapTrap bob = ClapTrap("Bob");
+	ClapTrap billy("Billy");	std::cout << std::endl;
+	ClapTrap bob("Bob");		std::cout << std::endl;
 	
-	std::cout << std::endl;
-	
-	billy.toPrint();
-	bob.toPrint();
-	
-	std::cout << std::endl;
+	billy.toPrint();			std::cout << std::endl;
+	bob.toPrint();				std::cout << std::endl;
 	
 	main_attack(billy, bob);
 	

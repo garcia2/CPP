@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 13:46:17 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 14:02:33 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
 
 ClapTrap::~ClapTrap(void) {
 	
-	std::cout << "ClapTrap Destructor called" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -97,7 +97,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 
 void	ClapTrap::toPrint() const {
 
-	std::cout << "This is ClapTrap " << this->_name << " -" << std::endl;
+	std::cout << "This is " << this->_name << " -" << std::endl;
 	std::cout << "	HP: " << this->_hitPoints << std::endl;
 	std::cout << "	EP: " << this->_energyPoints << std::endl;
 	std::cout << "	AD: " << this->_attackDamages << std::endl;

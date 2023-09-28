@@ -1,44 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 14:02:45 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 14:38:55 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ClapTrap::ClapTrap(void) : _hitPoints(10), _energyPoints(10), _attackDamages(0) {
+FragTrap::FragTrap(void) {
 	
-	std::cout << "Default ClapTrap constructor called" << std::endl;
+	std::cout << "Default FragTrap constructor called" << std::endl;
+	
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamages = 30;
 
 	return;
 }	// Cannonical (Protected)
 
-ClapTrap::ClapTrap(std::string name) {
+FragTrap::FragTrap(std::string name) {
 
-	std::cout << "Parametric ClapTrap " << name << " constructor called" << std::endl;
-	*this = ClapTrap();
+	std::cout << "Parametric FragTrap " << name << " constructor called" << std::endl;
+	*this = FragTrap();
 	this->_name = name;
 }
 
-ClapTrap::ClapTrap(ClapTrap const & src) {
+FragTrap::FragTrap(FragTrap const & src) {
 	
-	std::cout << "Copy ClapTrap constructor called" << std::endl;
+	std::cout << "Copy FragTrap constructor called" << std::endl;
 	*this = src;
 	
 	return;
 }	// Cannonical
 
-ClapTrap::~ClapTrap(void) {
+FragTrap::~FragTrap(void) {
 	
-	std::cout << "ClapTrap " << this->_name << " Destructor called" << std::endl;
+	std::cout << "FragTrap " << this->_name << " Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -49,58 +53,16 @@ ClapTrap::~ClapTrap(void) {
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
-void 	ClapTrap::attack(const std::string& target) {
-	
+void	FragTrap::highFive(void) {
+
 	if (this->_hitPoints == 0 || this->_energyPoints == 0)
 	{
-		std::cout << this->_name << " can't attack, ";
+		std::cout << this->_name << " can't gives a high five, ";
 		std::cout << ((this->_hitPoints == 0) ? "he's dead..." : "he has no energy.") << std::endl;
 		return ;
 	}
-	std::cout << this->_name << " deals " << this->_attackDamages << " damage to " << target << " !" << std::endl;
+	std::cout << this->_name << " gives his mates a HIGH FIVE !" << std::endl;
 	this->_energyPoints--;
-}
-
-void 	ClapTrap::takeDamage(unsigned int amount) {
-	
-	std::cout << this->_name << " takes " << amount << " damage. ";
-	if (this->_hitPoints == 0) {
-
-		std::cout << "But he's already dead... F" << std::endl;
-		return ;
-	}
-	if (amount >= this->_hitPoints) {
-		
-		this->_hitPoints = 0;
-		std::cout << "He is dead... Press F to pay respect." << std::endl;
-	}
-	else {
-		
-		this->_hitPoints -= amount;
-		std::cout << "He has " << this->_hitPoints << " HP left." << std::endl;
-	}
-}
-
-void	ClapTrap::beRepaired(unsigned int amount) {
-	
-	if (this->_hitPoints == 0 || this->_energyPoints == 0)
-	{
-		std::cout << this->_name << " can't be repaired, ";
-		std::cout << ((this->_hitPoints == 0) ? "he's dead..." : "he has no energy.") << std::endl;
-		return ;
-	}
-	this->_hitPoints+= amount;
-	this->_energyPoints--;
-	std::cout << this->_name << " repairing. . . He restored " << amount << " HP ! He has now " << this->_hitPoints << " HP." << std::endl;
-}
-
-
-void	ClapTrap::toPrint() const {
-
-	std::cout << "This is " << this->_name << " -" << std::endl;
-	std::cout << "	HP: " << this->_hitPoints << std::endl;
-	std::cout << "	EP: " << this->_energyPoints << std::endl;
-	std::cout << "	AD: " << this->_attackDamages << std::endl;
 }
 
 /*----------------------------------------------|Object functions :: Public|--*/
@@ -125,9 +87,9 @@ void	ClapTrap::toPrint() const {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-ClapTrap &	ClapTrap::operator=(ClapTrap const & other) {
+FragTrap &	FragTrap::operator=(FragTrap const & other) {
 	
-	std::cout << "Copy assignment ClapTrap operator called" << std::endl;
+	std::cout << "Copy assignment FragTrap operator called" << std::endl;
 	if (this != &other) {
 		
 		this->_name = other.getName();
@@ -145,35 +107,10 @@ ClapTrap &	ClapTrap::operator=(ClapTrap const & other) {
 
 /*--|Getters|-----------------------------------------------------------------*/
 
-std::string	ClapTrap::getName() const {
-
-	return this->_name;
-}
-
-unsigned int	ClapTrap::getHitPoints() const {
-
-	return this->_hitPoints;
-}
-
-unsigned int	ClapTrap::getEnergyPoints() const {
-
-	return this->_energyPoints;
-}
-
-unsigned int	ClapTrap::getAttackDamages() const {
-
-	return this->_attackDamages;
-}
-
 /*-----------------------------------------------------------------|Getters|--*/
 
 
 /*--|Setters|-----------------------------------------------------------------*/
-
-void	ClapTrap::setAttackDamages(unsigned int attackDamages) {
-
-	this->_attackDamages = attackDamages;
-}
 
 /*-----------------------------------------------------------------|Setters|--*/
 
