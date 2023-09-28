@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.hpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 11:59:18 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 13:18:50 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_TEMPLATE_HPP
-# define CLASS_TEMPLATE_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include <iostream>
 #include <string>
+#include "ClapTrap.hpp"
 
-class ClassTemplate {
+class ScavTrap : public ClapTrap {
 
 	private:
 		
@@ -24,7 +25,8 @@ class ClassTemplate {
 
 		// Functions
 
-		// Hidden Constructor
+		// Hidden Constructors
+		ScavTrap(void);						// Cannonical
 
 	protected:
 		
@@ -37,16 +39,16 @@ class ClassTemplate {
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(void);						// Cannonical
-		ClassTemplate(ClassTemplate const & src);	// Cannonical
-		~ClassTemplate(void);						// Cannonical
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const & src);		// Cannonical
+		~ScavTrap(void);					// Cannonical
 
 		// Functions
 
 		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & rhs); // Cannonical
+		ScavTrap &	operator=(ScavTrap const & rhs); // Cannonical
 
-		// Getters
+		// Getters;
 
 		// Setters
 

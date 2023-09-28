@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.cpp                                 :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 13:45:13 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 13:47:25 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Class.Template.hpp"
+#include "ScavTrap.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ClassTemplate::ClassTemplate(void) {
+ScavTrap::ScavTrap(void) {
 	
-	std::cout << "Default ClassTemplate constructor called" << std::endl;
+	std::cout << "Default ScavTrap constructor called" << std::endl;
+	
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamages = 20;
 
+	return;
+}	// Cannonical (Private)
+
+ScavTrap::ScavTrap(std::string name) {
+
+	std::cout << "Parametric ScavTrap " << name << " constructor called" << std::endl;
+	*this = ScavTrap();
+	this->_name = name;
+}
+
+ScavTrap::ScavTrap(ScavTrap const & src) {
+	
+	std::cout << "Copy ScavTrap constructor called" << std::endl;
+	*this = src;
+	
 	return;
 }	// Cannonical
 
-ClassTemplate::ClassTemplate(ClassTemplate const & src) {
+ScavTrap::~ScavTrap(void) {
 	
-	std::cout << "Copy ClassTemplate constructor called" << std::endl;
-	*this = src; // Be careful to properly overload the '=' operator for this to work
-	
-	return;
-}	// Cannonical
-
-ClassTemplate::~ClassTemplate(void) {
-	
-	std::cout << "ClassTemplate Destructor called" << std::endl;
+	std::cout << "ScavTrap Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -45,11 +56,6 @@ ClassTemplate::~ClassTemplate(void) {
 /*----------------------------------------------|Object functions :: Public|--*/
 
 
-/*--|Object functions :: Protected|-------------------------------------------*/
-
-/*-------------------------------------------|Object functions :: Protected|--*/
-
-
 /*--|Object functions :: Private|---------------------------------------------*/
 
 /*---------------------------------------------|Object functions :: Private|--*/
@@ -61,11 +67,6 @@ ClassTemplate::~ClassTemplate(void) {
 /*-----------------------------------------------|Class functions :: Public|--*/
 
 
-/*--|Class functions :: Protected|--------------------------------------------*/
-
-/*--------------------------------------------|Class functions :: Protected|--*/
-
-
 /*--|Class functions :: Private|----------------------------------------------*/
 
 /*----------------------------------------------|Class functions :: Private|--*/
@@ -74,13 +75,15 @@ ClassTemplate::~ClassTemplate(void) {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & rhs) {
+ScavTrap &	ScavTrap::operator=(ScavTrap const & other) {
 	
-	std::cout << "Copy assignment ClassTemplate operator called" << std::endl;
-	if (this != &rhs) {
+	std::cout << "Copy assignment ScavTrap operator called" << std::endl;
+	if (this != &other) {
 		
-		// this->_param = rhs.getParam();
-		// ...
+		this->_name = other.getName();
+		this->_hitPoints = other.getHitPoints();
+		this->_energyPoints = other.getEnergyPoints();
+		this->_attackDamages = other.getAttackDamages();
 	}
 
 	return (*this);
