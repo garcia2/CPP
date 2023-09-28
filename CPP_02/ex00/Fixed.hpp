@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/27 17:02:48 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 00:22:58 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed {
 	private:
 		
 		// Attributes
-		int					rawBits;
+		int					_rawBits;
 		static int const	_nbFractionalBits;
 		// Functions
 

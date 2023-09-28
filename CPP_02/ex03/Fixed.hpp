@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 00:22:37 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 00:15:55 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,37 @@ class Fixed {
 		~Fixed(void);				// Cannonical
 
 		// Functions
-		float	toFloat(void) const;
-		int		toInt(void) const;
+		float			toFloat(void) const;
+		int				toInt(void) const;
+		
+		static Fixed&	min(Fixed& f1, Fixed& f2);
+		static Fixed&	min(Fixed const & f1, Fixed const & f2);
+		static Fixed&	max(Fixed& f1, Fixed& f2);
+		static Fixed&	max(Fixed const & f1, Fixed const & f2);
 
 		// Operators overload
 		Fixed &	operator=(Fixed const & rhs); // Cannonical
+		
+		Fixed 	operator+(Fixed const & rhs) const;
+		Fixed 	operator-(Fixed const & rhs) const;
+		Fixed 	operator*(Fixed const & rhs) const;
+		Fixed 	operator/(Fixed const & rhs) const;
+		
+		bool	operator>(Fixed const & rhs) const;
+		bool	operator<(Fixed const & rhs) const;
+		bool	operator>=(Fixed const & rhs) const;
+		bool	operator<=(Fixed const & rhs) const;
+		bool	operator==(Fixed const & rhs) const;
+		bool	operator!=(Fixed const & rhs) const;
+		
+		Fixed&	operator++(void);
+		Fixed&	operator--(void);
+		Fixed	operator++(int);
+		Fixed	operator--(int);
 
+		Fixed& operator+=(const Fixed& rhs);
+		Fixed& operator-=(const Fixed& rhs);
+		
 		// Getters
 		int	getRawBits(void) const;
 

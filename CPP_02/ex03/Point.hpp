@@ -1,54 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 00:22:37 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 09:24:29 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef Point_HPP
+# define Point_HPP
 
 #include <iostream>
-#include <cmath>
+#include <string>
+#include "Fixed.hpp"
 
-class Fixed {
+class Point {
 
 	private:
 		
 		// Attributes
-		int					_rawBits;
-		static int const	_nbFractionalBits;
+		Fixed const	_x;
+		Fixed const	_y;
+
 		// Functions
 
 	public:
 
 		// Constructors & Destructors
-		Fixed(void);				// Cannonical
-		Fixed(int const raw);
-		Fixed(float const raw);
-		Fixed(Fixed const & src);	// Cannonical
-		~Fixed(void);				// Cannonical
+		Point(void);				// Cannonical
+		Point(float const x, float const y);
+		Point(Point const & src);	// Cannonical
+		~Point(void);				// Cannonical
 
 		// Functions
-		float	toFloat(void) const;
-		int		toInt(void) const;
+		float	getFloatX(void) const;
+		float	getFloatY(void) const;
 
 		// Operators overload
-		Fixed &	operator=(Fixed const & rhs); // Cannonical
+		Point &	operator=(Point const & rhs); // Cannonical
 
 		// Getters
-		int	getRawBits(void) const;
+		Fixed const	getX(void) const;
+		Fixed const	getY(void) const;
 
 		// Setters
-		void	setRawBits(int const raw);
 
 };
-
-std::ostream &	operator<<(std::ostream & o, Fixed const & i);
 
 #endif

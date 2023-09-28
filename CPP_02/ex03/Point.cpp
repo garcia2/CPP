@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.cpp                                 :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/27 22:22:30 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 09:24:33 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Class.Template.hpp"
+#include "Point.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ClassTemplate::ClassTemplate(void) {
-	
-	std::cout << "Default ClassTemplate constructor called" << std::endl;
-
-	return;
-}	// Cannonical
-
-ClassTemplate::ClassTemplate(ClassTemplate const & src) {
-	
-	std::cout << "Copy ClassTemplate constructor called" << std::endl;
-	*this = src;
+Point::Point(void) : _x(Fixed()), _y(Fixed()){
 	
 	return;
 }	// Cannonical
 
-ClassTemplate::~ClassTemplate(void) {
-	
-	std::cout << "ClassTemplate Destructor called" << std::endl;
+Point::Point(float const x, float const y) : _x(Fixed(x)), _y(Fixed(y)) {
 
+	return;
+}
+
+Point::Point(Point const & src) : _x(Fixed(src._x)), _y(Fixed(src._y)){
+	
+	return;
+}	// Cannonical
+
+Point::~Point(void) {
+	
 	return;
 }	// Cannonical
 
@@ -41,6 +39,16 @@ ClassTemplate::~ClassTemplate(void) {
 
 
 /*--|Object functions :: Public|----------------------------------------------*/
+
+float	Point::getFloatX(void) const {
+
+	return (this->_x.toFloat());
+}
+
+float	Point::getFloatY(void) const {
+
+	return (this->_x.toFloat());
+}
 
 /*----------------------------------------------|Object functions :: Public|--*/
 
@@ -64,15 +72,9 @@ ClassTemplate::~ClassTemplate(void) {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & rhs) {
+Point &	Point::operator=(Point const & rhs) {
 	
-	std::cout << "Copy assignment ClassTemplate operator called" << std::endl;
-	if (this != &rhs) {
-		
-		// this->_param = rhs.getParam();
-		// ...
-	}
-
+	(void) rhs;
 	return (*this);
 }	// Cannonical
 
@@ -81,6 +83,16 @@ ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & rhs) {
 
 
 /*--|Getters|-----------------------------------------------------------------*/
+
+Fixed const	Point::getX(void) const {
+
+	return (this->_x);
+}
+
+Fixed const	Point::getY(void) const {
+
+	return (this->_y);
+}
 
 /*-----------------------------------------------------------------|Getters|--*/
 

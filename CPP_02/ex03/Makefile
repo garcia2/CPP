@@ -1,9 +1,12 @@
-NAME		= BIN_NAME
+NAME		= bsp
 SRCSDIR		= .
 OBJSDIR		= objs
 INCLUDES	= .
 
-SRCS		= Class.Template.cpp 
+SRCS		= bsp.cpp \
+			Fixed.cpp \
+			Point.cpp \
+			main.cpp
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
