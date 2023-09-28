@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 14:24:48 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:14:28 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ ScavTrap::ScavTrap(void) {
 
 ScavTrap::ScavTrap(std::string name) {
 
-	std::cout << "Parametric ScavTrap " << name << " constructor called" << std::endl;
 	*this = ScavTrap();
+	std::cout << "Parametric ScavTrap " << name << " constructor called" << std::endl;
 	this->_name = name;
 }
 
@@ -68,22 +68,6 @@ void	ScavTrap::guardGate(void) {
 /*----------------------------------------------|Object functions :: Public|--*/
 
 
-/*--|Object functions :: Private|---------------------------------------------*/
-
-/*---------------------------------------------|Object functions :: Private|--*/
-
-
-
-/*--|Class functions :: Public|-----------------------------------------------*/
-
-/*-----------------------------------------------|Class functions :: Public|--*/
-
-
-/*--|Class functions :: Private|----------------------------------------------*/
-
-/*----------------------------------------------|Class functions :: Private|--*/
-
-
 
 /*--|Operators Overload|------------------------------------------------------*/
 
@@ -102,20 +86,3 @@ ScavTrap &	ScavTrap::operator=(ScavTrap const & other) {
 }	// Cannonical
 
 /*------------------------------------------------------|Operators Overload|--*/
-
-
-
-/*--|Getters|-----------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------|Getters|--*/
-
-
-/*--|Setters|-----------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------|Setters|--*/
-
-
-
-/*--|Class Attributes|--------------------------------------------------------*/
-
-/*--------------------------------------------------------|Class Attributes|--*/
