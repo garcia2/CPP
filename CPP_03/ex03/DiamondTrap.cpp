@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 15:53:31 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 14:12:41 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,11 @@
 DiamondTrap::DiamondTrap(void) {
 	
 	std::cout << "Default DiamondTrap constructor called" << std::endl;
-	
-	std::cout << "	--temp FragTrap" << std::endl;
-	FragTrap f("");
-	std::cout << "	--END temp FragTrap" << std::endl;
-	std::cout << "	--temp ScavTrap" << std::endl;
-	ScavTrap s("");
-	std::cout << "	--END temp ScavTrap" << std::endl;
 
-	this->FragTrap::_hitPoints = f.getHitPoints();
-	this->ScavTrap::_energyPoints = s.getEnergyPoints();
-	this->FragTrap::_attackDamages = f.getAttackDamages();
+	this->FragTrap::_hitPoints = FragTrap::_hitPointsRef;
+	this->ScavTrap::_energyPoints = ScavTrap::_energyPointsRef;
+	this->FragTrap::_attackDamages = FragTrap::_attackDamages;
+	this->_name = "defaultName";
 
 	return;
 }	// Cannonical (Private)
@@ -35,7 +29,10 @@ DiamondTrap::DiamondTrap(void) {
 DiamondTrap::DiamondTrap(std::string name) {
 
 	std::cout << "Parametric DiamondTrap " << name << " constructor called" << std::endl;
-	*this = DiamondTrap();
+
+	this->FragTrap::_hitPoints = FragTrap::_hitPointsRef;
+	this->ScavTrap::_energyPoints = ScavTrap::_energyPointsRef;
+	this->FragTrap::_attackDamages = FragTrap::_attackDamages;
 	this->_name = name;
 	this->ClapTrap::_name = name + "_clap_name";
 }

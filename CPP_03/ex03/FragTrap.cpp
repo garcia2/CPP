@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 15:54:34 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 14:12:37 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ FragTrap::FragTrap(void) {
 	
 	std::cout << "Default FragTrap constructor called" << std::endl;
 	
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamages = 30;
+	this->_hitPoints = FragTrap::_hitPointsRef;
+	this->_energyPoints = FragTrap::_energyPointsRef;
+	this->_attackDamages = FragTrap::_attackDamagesRef;
+	this->_name = "defaultName";
 
 	return;
 }	// Cannonical (Protected)
@@ -28,8 +29,13 @@ FragTrap::FragTrap(void) {
 FragTrap::FragTrap(std::string name) {
 
 	std::cout << "Parametric FragTrap " << name << " constructor called" << std::endl;
-	*this = FragTrap();
+	
+	this->_hitPoints = FragTrap::_hitPointsRef;
+	this->_energyPoints = FragTrap::_energyPointsRef;
+	this->_attackDamages = FragTrap::_attackDamagesRef;
 	this->_name = name;
+
+	return ;
 }
 
 FragTrap::FragTrap(FragTrap const & src) {
@@ -86,3 +92,13 @@ FragTrap &	FragTrap::operator=(FragTrap const & other) {
 }	// Cannonical
 
 /*------------------------------------------------------|Operators Overload|--*/
+
+
+
+/*--|Class Attributes|--------------------------------------------------------*/
+
+unsigned int	FragTrap::_hitPointsRef = 100;
+unsigned int	FragTrap::_energyPointsRef = 100;
+unsigned int	FragTrap::_attackDamagesRef = 30;
+
+/*--------------------------------------------------------|Class Attributes|--*/

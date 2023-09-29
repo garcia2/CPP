@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 15:39:34 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 14:07:34 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		// Functions
 
 		// Hidden Constructors
-		DiamondTrap(void);						// Cannonical
 
 	protected:
 		
@@ -37,6 +36,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 		// Functions
 
 		// Hidden Constructor (except for inheritance)
+		DiamondTrap(void);						// Cannonical
 
 	public:
 

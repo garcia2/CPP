@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 15:55:41 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 14:12:55 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ ScavTrap::ScavTrap(void) {
 	
 	std::cout << "Default ScavTrap constructor called" << std::endl;
 	
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamages = 20;
+	this->_hitPoints = ScavTrap::_hitPointsRef;
+	this->_energyPoints = ScavTrap::_energyPointsRef;
+	this->_attackDamages = ScavTrap::_attackDamagesRef;
+	this->_name = "defaultName";
 
 	return;
 }	// Cannonical (Private)
@@ -28,7 +29,11 @@ ScavTrap::ScavTrap(void) {
 ScavTrap::ScavTrap(std::string name) {
 
 	std::cout << "Parametric ScavTrap " << name << " constructor called" << std::endl;
-	*this = ScavTrap();
+	
+	this->_hitPoints = ScavTrap::_hitPointsRef;
+	this->_energyPoints = ScavTrap::_energyPointsRef;
+	this->_attackDamages = ScavTrap::_attackDamagesRef;
+
 	this->_name = name;
 }
 
@@ -86,3 +91,13 @@ ScavTrap &	ScavTrap::operator=(ScavTrap const & other) {
 }	// Cannonical
 
 /*------------------------------------------------------|Operators Overload|--*/
+
+
+
+/*--|Class Attributes|--------------------------------------------------------*/
+
+unsigned int	ScavTrap::_hitPointsRef = 100;
+unsigned int	ScavTrap::_energyPointsRef = 50;
+unsigned int	ScavTrap::_attackDamagesRef = 20;
+
+/*--------------------------------------------------------|Class Attributes|--*/

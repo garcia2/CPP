@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 15:57:45 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 14:12:16 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,28 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ClapTrap::ClapTrap(void) : _hitPoints(10), _energyPoints(10), _attackDamages(0) {
+ClapTrap::ClapTrap(void) {
 	
 	std::cout << "Default ClapTrap constructor called" << std::endl;
-
+	
+	this->_hitPoints = ClapTrap::_hitPointsRef;
+	this->_energyPoints = ClapTrap::_energyPointsRef;
+	this->_attackDamages = ClapTrap::_attackDamagesRef;
+	this->_name = "defaultName";
+	
 	return;
 }	// Cannonical (Private)
 
 ClapTrap::ClapTrap(std::string name) {
 
 	std::cout << "Parametric ClapTrap " << name << "constructor called" << std::endl;
-	*this = ClapTrap();
+	
+	this->_hitPoints = ClapTrap::_hitPointsRef;
+	this->_energyPoints = ClapTrap::_energyPointsRef;
+	this->_attackDamages = ClapTrap::_attackDamagesRef;
 	this->_name = name;
+	
+	return;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src) {
@@ -160,3 +170,13 @@ void	ClapTrap::setAttackDamages(unsigned int attackDamages) {
 }
 
 /*-----------------------------------------------------------------|Setters|--*/
+
+
+
+/*--|Class Attributes|--------------------------------------------------------*/
+
+unsigned int	ClapTrap::_hitPointsRef = 10;
+unsigned int	ClapTrap::_energyPointsRef = 10;
+unsigned int	ClapTrap::_attackDamagesRef = 0;
+
+/*--------------------------------------------------------|Class Attributes|--*/

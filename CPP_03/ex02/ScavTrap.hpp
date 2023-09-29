@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 13:58:27 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 13:36:19 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ class ScavTrap : public ClapTrap {
 	private:
 		
 		// Attributes
+		static unsigned int	_hitPointsRef;
+		static unsigned int	_energyPointsRef;
+		static unsigned int	_attackDamagesRef;
 
 		// Functions
 

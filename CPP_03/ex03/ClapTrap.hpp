@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 12:00:30 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 14:07:28 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ class ClapTrap {
 	private:
 		
 		// Attributes
+		static unsigned int	_hitPointsRef;
+		static unsigned int	_energyPointsRef;
+		static unsigned int	_attackDamagesRef;
 
 		// Functions
 
@@ -33,6 +36,7 @@ class ClapTrap {
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;
 		unsigned int	_attackDamages;
+
 
 		// Functions
 
