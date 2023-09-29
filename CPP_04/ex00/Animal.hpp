@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.hpp                                 :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 14:56:04 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:30:09 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_TEMPLATE_HPP
-# define CLASS_TEMPLATE_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
-//#include <string>
+#include <string>
 
-class ClassTemplate {
+class Animal {
 
 	private:
 		
@@ -29,7 +29,7 @@ class ClassTemplate {
 	protected:
 		
 		// Attributes
-
+		std::string	_type;
 		// Functions
 
 		// Hidden Constructor (except for inheritance)
@@ -37,16 +37,18 @@ class ClassTemplate {
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(void);						// Cannonical
-		ClassTemplate(ClassTemplate const & other);	// Cannonical
-		~ClassTemplate(void);						// Cannonical
+		Animal(void);					// Cannonical
+		Animal(Animal const & other);	// Cannonical
+		~Animal(void);					// Cannonical
 
 		// Functions
+		void	makeSound(void);
 
 		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & other); // Cannonical
+		Animal &	operator=(Animal const & other); // Cannonical
 
 		// Getters
+		std::string	getType(void) const;
 
 		// Setters
 

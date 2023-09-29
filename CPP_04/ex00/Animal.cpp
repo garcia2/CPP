@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.cpp                                 :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 14:55:35 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:35:05 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Class.Template.hpp"
+#include "Animal.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ClassTemplate::ClassTemplate(void) {
+Animal::Animal(void) : _type("Animal") {
 	
-	std::cout << "Default ClassTemplate constructor called" << std::endl;
+	std::cout << "Default Animal constructor called" << std::endl;
 
 	return;
 }	// Cannonical
 
-ClassTemplate::ClassTemplate(ClassTemplate const & other) {
+Animal::Animal(Animal const & src) {
 	
-	std::cout << "Copy ClassTemplate constructor called" << std::endl;
-	*this = other; // Be careful to properly overload the '=' operator for this to work
+	std::cout << "Copy Animal constructor called" << std::endl;
+	*this = src; // Be careful to properly overload the '=' operator for this to work
 	
 	return;
 }	// Cannonical
 
-ClassTemplate::~ClassTemplate(void) {
+Animal::~Animal(void) {
 	
-	std::cout << "ClassTemplate Destructor called" << std::endl;
+	std::cout << "Animal Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -41,6 +41,11 @@ ClassTemplate::~ClassTemplate(void) {
 
 
 /*--|Object functions :: Public|----------------------------------------------*/
+
+void	makeSound(void) {
+
+	std::cout << "*weird Animal noise*" << std::endl;
+}
 
 /*----------------------------------------------|Object functions :: Public|--*/
 
@@ -74,13 +79,12 @@ ClassTemplate::~ClassTemplate(void) {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & other) {
+Animal &	Animal::operator=(Animal const & other) {
 	
-	std::cout << "Copy assignment ClassTemplate operator called" << std::endl;
+	std::cout << "Copy assignment Animal operator called" << std::endl;
 	if (this != &other) {
 		
-		// this->_param = rhs.getParam();
-		// ...
+		this->_type = other.getType();
 	}
 
 	return (*this);
@@ -91,6 +95,11 @@ ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & other) {
 
 
 /*--|Getters|-----------------------------------------------------------------*/
+
+std::string	Animal::getType(void) const {
+
+	return (this->_type);
+}
 
 /*-----------------------------------------------------------------|Getters|--*/
 

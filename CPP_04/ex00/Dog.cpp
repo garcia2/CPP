@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Class.Template.hpp                                 :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 14:56:04 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:24:04 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_TEMPLATE_HPP
-# define CLASS_TEMPLATE_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 #include <iostream>
 //#include <string>
 
-class ClassTemplate {
+class Dog {
 
 	private:
 		
@@ -37,14 +37,14 @@ class ClassTemplate {
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(void);						// Cannonical
-		ClassTemplate(ClassTemplate const & other);	// Cannonical
-		~ClassTemplate(void);						// Cannonical
+		Dog(void);						// Cannonical
+		Dog(Dog const & other);	// Cannonical
+		~Dog(void);						// Cannonical
 
 		// Functions
 
 		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & other); // Cannonical
+		Dog &	operator=(Dog const & other); // Cannonical
 
 		// Getters
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:26:34 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 13:58:32 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 18:17:01 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,14 @@ void	search(PhoneBook phoneBook) {
 	std::cout << "Select an index : ";
 	std::getline(std::cin, line);
 	index = atoi(line.c_str());
+	std::cin.clear();
 	while (line.length() == 0 || !(PhoneBook::isValidNumber(line)) || index < 0 || index >= phoneBook.getSize())
 	{
 		std::cout << "\"" << line << "\" is not a valid index" << std::endl;
 		std::cout << "Select an index : ";
 		std::getline(std::cin, line);
 		index = atoi(line.c_str());
+		std::cin.clear();
 	}
 	phoneBook.getContactById(index).printList();
 }

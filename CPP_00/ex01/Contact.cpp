@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 14:54:21 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/09/29 18:15:35 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-// Constructors and Destructors //
+
+/*--|Constructors & Destructors|----------------------------------------------*/
 
 Contact::Contact (void) { 
 	
@@ -35,10 +36,11 @@ Contact::~Contact(void) {
 	//std::cout << "Contact destructor called" << std::endl;
 }
 
+/*----------------------------------------------|Constructors & Destructors|--*/
 
-// Object functions
 
-// Object functions :: Public
+
+/*--|Object functions :: Public|----------------------------------------------*/
 
 void	Contact::printLine(int padding) const {
 
@@ -59,10 +61,11 @@ void	Contact::printList(void) const {
 	std::cout << "	darkest secret : " << this->_darkestSecret << std::endl;
 }
 
+/*----------------------------------------------|Object functions :: Public|--*/
 
-// Class functions
 
-// Class functions :: Public
+
+/*--|Class functions :: Public|-----------------------------------------------*/
 
 void	Contact::printFirstLine(int padding) {
 
@@ -72,8 +75,10 @@ void	Contact::printFirstLine(int padding) {
 	std::cout << std::setw(padding) << "nickname" << "|" << std::endl;
 }
 
+/*-----------------------------------------------|Class functions :: Public|--*/
 
-// Class functions :: Private
+
+/*--|Class functions :: Private|----------------------------------------------*/
 
 std::string	Contact::getTruncatedArg(std::string str, int padding) {
 
@@ -86,8 +91,11 @@ std::string	Contact::getTruncatedArg(std::string str, int padding) {
 	return (newStr);
 }
 
+/*----------------------------------------------|Class functions :: Private|--*/
 
-// Getters
+
+
+/*--|Getters|-----------------------------------------------------------------*/
 
 int	Contact::getIndex(void) const {
 
@@ -110,8 +118,10 @@ std::string	Contact::getPhoneNumber(void) const {
 	return (this->_nickName);
 }
 
+/*-----------------------------------------------------------------|Getters|--*/
 
-// Setters
+
+/*--|Setters|-----------------------------------------------------------------*/
 
 void	Contact::setIndex(int index) {
 	
@@ -138,3 +148,5 @@ void	Contact::setDarkestSecret(std::string darkestSecret) {
 	
 	this->_darkestSecret = darkestSecret;
 }
+
+/*-----------------------------------------------------------------|Setters|--*/
