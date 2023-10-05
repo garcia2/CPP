@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 09:30:24 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 14:47:31 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/05 12:15:56 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class PhoneBook {
 		int		_size;
 
 		// Functions
-		void				incrementNextIndex(void);
-		static std::string	getInput(std::string message);
-		static std::string	getInputPhoneNumber(void);
-		static void			printSeparationLine(int padding);
+		void				_incrementNextIndex(void);
+		static std::string	_getInput(std::string message);
+		static std::string	_getInputPhoneNumber(void);
+		static void			_printSeparationLine(int padding);
 	
 	public:
 

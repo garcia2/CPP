@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:26:34 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 18:17:01 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:50:42 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include "PhoneBook.hpp"
 #include <iomanip>
+#include "PhoneBook.hpp"
 
 void	prompt_commands(void)
 {
@@ -26,12 +26,25 @@ void	prompt_commands(void)
 	std::cout << "command_prompt : ";
 }
 
+int	cinCheckEnd(void) {
+
+	if (std::cin.eof()) {
+		
+		std::cout << std::endl;
+		return (1);
+	}
+	return (0);
+}
+
 int	is_valid_command(std::string str) {
 
+	if (cinCheckEnd())
+		return (1);
 	return (str.compare("ADD") == 0 || str.compare("SEARCH") == 0 || str.compare("EXIT") == 0);
 }
 
-void	search(PhoneBook phoneBook) {
+
+int	search(PhoneBook phoneBook) {
 
 	int			index;
 	std::string line;
@@ -39,32 +52,33 @@ void	search(PhoneBook phoneBook) {
 	if (phoneBook.getSize() == 0) {
 		
 		std::cout << "Your phonebook is empty" << std::endl;
-		return ;
+		return (1) ;
 	}
 	std::cout << std::endl;
 	phoneBook.printContactsLine(10);
 	std::cout << "Select an index : ";
 	std::getline(std::cin, line);
 	index = atoi(line.c_str());
-	std::cin.clear();
-	while (line.length() == 0 || !(PhoneBook::isValidNumber(line)) || index < 0 || index >= phoneBook.getSize())
+	while (line.length() == 0 || !PhoneBook::isValidNumber(line) || index < 0 || index >= phoneBook.getSize())
 	{
+		
+		if (cinCheckEnd())
+			return (0);
 		std::cout << "\"" << line << "\" is not a valid index" << std::endl;
 		std::cout << "Select an index : ";
 		std::getline(std::cin, line);
 		index = atoi(line.c_str());
-		std::cin.clear();
 	}
 	phoneBook.getContactById(index).printList();
+	return (1);
 }
 
 void	prompt(PhoneBook phoneBook) {
 
 	std::string	command;
-	int			quit = 0;
 
 	std::cout << "		- This is your phonebook - " << std::endl;
-	while (!quit){
+	while (1){
 		
 		prompt_commands();
 		std::getline(std::cin, command);
@@ -76,10 +90,19 @@ void	prompt(PhoneBook phoneBook) {
 		}
 		if (command.compare("ADD") == 0)
 			phoneBook.add_contact();
-		else if(command.compare("SEARCH") == 0)
-			search(phoneBook);
-		else //command = EXIT
-			quit = 1;
+		else if(command.compare("SEARCH") == 0) {
+
+			if (!search(phoneBook)) {
+				
+				std::cout << std::endl << "	Bye bye !" << std::endl;
+				return;			
+			}			
+		}
+		else { //command = EXIT or std::cin.eof()
+			
+			std::cout << std::endl << "	Bye bye !" << std::endl;
+			return;
+		} 
 	}
 }
 

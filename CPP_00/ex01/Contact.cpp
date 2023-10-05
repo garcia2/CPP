@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 18:15:35 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/05 12:15:21 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ Contact::~Contact(void) {
 void	Contact::printLine(int padding) const {
 
 	std::cout << "|" << std::setw(padding) << this->_index << "|";
-	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_firstName, padding) << "|";
-	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_lastName, padding) << "|";
-	std::cout << std::setw(padding) << Contact::getTruncatedArg((std::string) this->_nickName, padding) << "|" << std::endl;
+	std::cout << std::setw(padding) << Contact::_getTruncatedArg((std::string) this->_firstName, padding) << "|";
+	std::cout << std::setw(padding) << Contact::_getTruncatedArg((std::string) this->_lastName, padding) << "|";
+	std::cout << std::setw(padding) << Contact::_getTruncatedArg((std::string) this->_nickName, padding) << "|" << std::endl;
 }
 
 void	Contact::printList(void) const {
@@ -80,7 +80,7 @@ void	Contact::printFirstLine(int padding) {
 
 /*--|Class functions :: Private|----------------------------------------------*/
 
-std::string	Contact::getTruncatedArg(std::string str, int padding) {
+std::string	Contact::_getTruncatedArg(std::string str, int padding) {
 
 	std::string newStr;
 

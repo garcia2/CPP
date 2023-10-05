@@ -6,7 +6,8 @@ INCLUDES	= .
 SRCS		= main.cpp	\
 			Animal.cpp	\
 			Dog.cpp		\
-			Cat.cpp
+			Cat.cpp		\
+			Brain.cpp
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98

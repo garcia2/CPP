@@ -6,13 +6,14 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 16:34:01 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/05 12:05:23 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 
-// Constructors and Destructors //
+
+/*--|Constructors & Destructors|----------------------------------------------*/
 
 Account::Account( int initial_deposit ) : _nbDeposits(initial_deposit) {
 
@@ -29,6 +30,7 @@ Account::Account( int initial_deposit ) : _nbDeposits(initial_deposit) {
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "created" << std::endl;
 }
+
 Account::~Account( void ) {
 
 	Account::_displayTimestamp();
@@ -37,10 +39,11 @@ Account::~Account( void ) {
 	std::cout << "closed" << std::endl;
 }
 
+/*----------------------------------------------|Constructors & Destructors|--*/
 
-// Object functions
 
-// Object functions :: Public
+
+/*--|Object functions :: Public|----------------------------------------------*/
 
 void	Account::makeDeposit( int deposit ) {
 	
@@ -93,13 +96,11 @@ void	Account::displayStatus( void ) const {
 	return;
 }
 
+/*----------------------------------------------|Object functions :: Public|--*/
 
-// Object functions :: Private
 
 
-// Class functions
-
-// Class functions :: Public
+/*--|Class functions :: Public|-----------------------------------------------*/
 
 int	Account::getNbAccounts( void ) {
 
@@ -130,8 +131,10 @@ void	Account::displayAccountsInfos( void ) {
 	std::cout << "withdrawals:" << Account::_totalNbWithdrawals << std::endl;
 }
 
+/*-----------------------------------------------|Class functions :: Public|--*/
 
-// Class functions :: Private
+
+/*--|Class functions :: Private|----------------------------------------------*/
 
 void	Account::_displayTimestamp( void ) {
 
@@ -145,15 +148,15 @@ void	Account::_displayTimestamp( void ) {
 	std::cout << "[" << buffer << "] ";
 }
 
-// Getters
+/*----------------------------------------------|Class functions :: Private|--*/
 
 
-// Setters
 
-
-// Class Parameters
+/*--|Class Attributes|--------------------------------------------------------*/
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
+
+/*--------------------------------------------------------|Class Attributes|--*/

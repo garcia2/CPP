@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/30 12:48:44 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/02 12:56:17 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal { 
+class Animal {
 
 	private:
 		
@@ -30,7 +30,9 @@ class Cat : public Animal {
 	protected:
 		
 		// Attributes
-
+		std::string	_type;
+		Brain*		_brain;
+		
 		// Functions
 
 		// Hidden Constructor (except for inheritance)
@@ -38,17 +40,19 @@ class Cat : public Animal {
 	public:
 
 		// Constructors & Destructors
-		Cat(void);				// Cannonical
-		Cat(Cat const & other);	// Cannonical
-		~Cat(void);				// Cannonical
+		Animal(void);					// Cannonical
+		Animal(Animal const & other);	// Cannonical
+		virtual ~Animal(void);					// Cannonical
 
 		// Functions
 		virtual void	makeSound(void);
 
 		// Operators overload
-		Cat &	operator=(Cat const & other); // Cannonical
+		Animal &	operator=(Animal const & other); // Cannonical
 
 		// Getters
+		std::string	getType(void) const;
+		Brain*		getBrain(void) const;
 
 		// Setters
 

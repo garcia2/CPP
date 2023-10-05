@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/30 12:48:44 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/02 13:28:44 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 #include <iostream>
-#include <string>
-#include "Animal.hpp"
 
-class Cat : public Animal { 
+class Brain {
 
 	private:
 		
 		// Attributes
+		std::string	_ideas[100];
 
 		// Functions
 
@@ -38,19 +37,21 @@ class Cat : public Animal {
 	public:
 
 		// Constructors & Destructors
-		Cat(void);				// Cannonical
-		Cat(Cat const & other);	// Cannonical
-		~Cat(void);				// Cannonical
+		Brain(void);					// Cannonical
+		Brain(Brain const & other);		// Cannonical
+		~Brain(void);					// Cannonical
 
 		// Functions
-		virtual void	makeSound(void);
+		void	toString(void) const;
 
 		// Operators overload
-		Cat &	operator=(Cat const & other); // Cannonical
+		Brain &	operator=(Brain const & other); // Cannonical
 
 		// Getters
+		std::string	getIdea(int index) const;
 
 		// Setters
+		void	setIdea(int index, std::string idea);
 
 };
 

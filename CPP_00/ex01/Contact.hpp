@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 14:31:11 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/05 12:14:46 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Contact {
 		std::string	_darkestSecret;
 
 		// Functions
-		static std::string	getTruncatedArg(std::string str, int padding);
+		static std::string	_getTruncatedArg(std::string str, int padding);
 
 
 	public:

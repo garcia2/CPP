@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 15:30:09 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:56:08 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Animal {
 		
 		// Attributes
 		std::string	_type;
+
 		// Functions
 
 		// Hidden Constructor (except for inheritance)
@@ -39,10 +40,10 @@ class Animal {
 		// Constructors & Destructors
 		Animal(void);					// Cannonical
 		Animal(Animal const & other);	// Cannonical
-		~Animal(void);					// Cannonical
+		virtual ~Animal(void);					// Cannonical
 
 		// Functions
-		void	makeSound(void);
+		virtual void	makeSound(void);
 
 		// Operators overload
 		Animal &	operator=(Animal const & other); // Cannonical

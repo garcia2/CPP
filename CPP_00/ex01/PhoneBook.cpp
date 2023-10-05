@@ -6,13 +6,14 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:49:01 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 14:53:46 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/05 12:17:42 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-// Constructor & Destructors
+
+/*--|Constructors & Destructors|----------------------------------------------*/
 
 PhoneBook::PhoneBook(void) : _nextIndex(0), _size(0) {
 
@@ -24,10 +25,11 @@ PhoneBook::~PhoneBook(void) {
 	//std::cout << "PhoneBook destructor called" << std::endl;	
 }
 
+/*----------------------------------------------|Constructors & Destructors|--*/
 
-// Object functions
 
-// Object functions :: Public
+
+/*--|Object functions :: Public|----------------------------------------------*/
 
 void	PhoneBook::add_contact(void) {
 
@@ -38,23 +40,23 @@ void	PhoneBook::add_contact(void) {
 	
 	contact.setIndex(this->_nextIndex);
 	
-	input = PhoneBook::getInput("Input first name : ");
+	input = PhoneBook::_getInput("Input first name : ");
 	contact.setFirstName(input);
 	
-	input = PhoneBook::getInput("Input last name : ");
+	input = PhoneBook::_getInput("Input last name : ");
 	contact.setLastName(input);
 	
-	input = PhoneBook::getInput("Input nickname : ");
+	input = PhoneBook::_getInput("Input nickname : ");
 	contact.setNickName(input);
 	
-	input = PhoneBook::getInputPhoneNumber();
+	input = PhoneBook::_getInputPhoneNumber();
 	contact.setPhoneNumber(input);
 
-	input = PhoneBook::getInput("Input his darkest secret : ");
+	input = PhoneBook::_getInput("Input his darkest secret : ");
 	contact.setDarkestSecret(input);
 	
 	this->_contacts[this->_nextIndex] = contact;
-	this->incrementNextIndex();
+	this->_incrementNextIndex();
 }
 
 void	PhoneBook::fill(void) {
@@ -73,19 +75,22 @@ void	PhoneBook::fill(void) {
 
 void	PhoneBook::printContactsLine(int padding) const {
 
-	PhoneBook::printSeparationLine(padding);
+	PhoneBook::_printSeparationLine(padding);
 	Contact::printFirstLine(padding);
-	PhoneBook::printSeparationLine(padding);
+	PhoneBook::_printSeparationLine(padding);
 	for (int i = 0; i < this->_size; i++) {
 		
 		this->_contacts[i].printLine(padding);
 	}
-	PhoneBook::printSeparationLine(padding);
+	PhoneBook::_printSeparationLine(padding);
 }
 
-// Object functions :: Private
+/*----------------------------------------------|Object functions :: Public|--*/
 
-void	PhoneBook::incrementNextIndex(void) {
+
+/*--|Object functions :: Private|---------------------------------------------*/
+
+void	PhoneBook::_incrementNextIndex(void) {
 	
 	if (this->_nextIndex == 7)
 		this->_nextIndex = 0;
@@ -95,10 +100,11 @@ void	PhoneBook::incrementNextIndex(void) {
 		this->_size++;
 }
 
+/*---------------------------------------------|Object functions :: Private|--*/
 
-// Class functions
 
-// Class functions :: Public
+
+/*--|Class functions :: Public|-----------------------------------------------*/
 
 int	PhoneBook::isValidNumber(std::string str) {
 	
@@ -112,10 +118,12 @@ int	PhoneBook::isValidNumber(std::string str) {
 	return (1);
 }
 
+/*-----------------------------------------------|Class functions :: Public|--*/
 
-// Class functions :: Private
 
-std::string	PhoneBook::getInput(std::string message) {
+/*--|Class functions :: Private|----------------------------------------------*/
+
+std::string	PhoneBook::_getInput(std::string message) {
 
 	std::string	input;
 	
@@ -130,7 +138,7 @@ std::string	PhoneBook::getInput(std::string message) {
 	return (input);
 }
 
-std::string	PhoneBook::getInputPhoneNumber(void) {
+std::string	PhoneBook::_getInputPhoneNumber(void) {
 
 	std::string	input;
 	
@@ -145,7 +153,7 @@ std::string	PhoneBook::getInputPhoneNumber(void) {
 	return (input);
 }
 
-void	PhoneBook::printSeparationLine(int padding) {
+void	PhoneBook::_printSeparationLine(int padding) {
 	
 	for (int i = 0; i < padding * 4 + 5; i++)
 		std::cout << "-";
@@ -153,7 +161,11 @@ void	PhoneBook::printSeparationLine(int padding) {
 }
 
 
-// Getters
+/*----------------------------------------------|Class functions :: Private|--*/
+
+
+
+/*--|Getters|-----------------------------------------------------------------*/
 
 Contact	PhoneBook::getContactById(int id) const {
 	
@@ -164,3 +176,5 @@ int	PhoneBook::getSize() const {
 
 	return (this->_size);
 }
+
+/*-----------------------------------------------------------------|Getters|--*/

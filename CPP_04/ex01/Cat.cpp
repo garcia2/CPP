@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/02 13:22:27 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/02 14:34:41 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cat.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-Animal::Animal(void) : _type("Animal") {
+Cat::Cat(void) {
 	
-	std::cout << "Default Animal constructor called" << std::endl;
-
+	std::cout << "Default Cat constructor called" << std::endl;
+	this->_type = "Cat";
+	
 	return;
 }	// Cannonical
 
-Animal::Animal(Animal const & src) {
+Cat::Cat(Cat const & src) {
 	
-	std::cout << "Copy Animal constructor called" << std::endl;
+	std::cout << "Copy Cat constructor called" << std::endl;
 	*this = src; // Be careful to properly overload the '=' operator for this to work
 	
 	return;
 }	// Cannonical
 
-Animal::~Animal(void) {
+Cat::~Cat(void) {
 	
-	std::cout << "Animal Destructor called" << std::endl;
+	std::cout << "Cat Destructor called" << std::endl;
+	//this->Animal::~Animal();
 
 	return;
 }	// Cannonical
@@ -42,9 +44,9 @@ Animal::~Animal(void) {
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
-void	Animal::makeSound(void) {
+void	Cat::makeSound(void) {
 
-	std::cout << "*weird Animal noise*" << std::endl;
+	std::cout << "*MIAOUUU MIAOUUUUUUUUU!*" << std::endl;
 }	// (Virtual)
 
 /*----------------------------------------------|Object functions :: Public|--*/
@@ -79,12 +81,15 @@ void	Animal::makeSound(void) {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-Animal &	Animal::operator=(Animal const & other) {
+Cat &	Cat::operator=(Cat const & other) {
 	
-	std::cout << "Copy assignment Animal operator called" << std::endl;
+	std::cout << "Copy assignment Cat operator called" << std::endl;
 	if (this != &other) {
 		
 		this->_type = other.getType();
+		if (this->_brain != NULL)
+			delete this->_brain;
+		this->_brain = new Brain(*other._brain);
 	}
 
 	return (*this);
@@ -95,11 +100,6 @@ Animal &	Animal::operator=(Animal const & other) {
 
 
 /*--|Getters|-----------------------------------------------------------------*/
-
-std::string	Animal::getType(void) const {
-
-	return (this->_type);
-}
 
 /*-----------------------------------------------------------------|Getters|--*/
 

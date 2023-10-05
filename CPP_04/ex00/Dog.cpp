@@ -3,53 +3,109 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 15:24:04 by nigarcia         ###   ########.fr       */
+/*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
+/*   Updated: 2023/09/30 12:45:02 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#include "Dog.hpp"
 
-#include <iostream>
-//#include <string>
+/*--|Constructors & Destructors|----------------------------------------------*/
 
-class Dog {
+Dog::Dog(void) {
+	
+	std::cout << "Default Dog constructor called" << std::endl;
+	this->_type = "Dog";
+	
+	return;
+}	// Cannonical
 
-	private:
+Dog::Dog(Dog const & src) {
+	
+	std::cout << "Copy Dog constructor called" << std::endl;
+	*this = src; // Be careful to properly overload the '=' operator for this to work
+	
+	return;
+}	// Cannonical
+
+Dog::~Dog(void) {
+	
+	std::cout << "Dog Destructor called" << std::endl;
+
+	return;
+}	// Cannonical
+
+/*----------------------------------------------|Constructors & Destructors|--*/
+
+
+
+/*--|Object functions :: Public|----------------------------------------------*/
+
+void	Dog::makeSound(void) {
+
+	std::cout << "*Ouaf Ouaf i'm a dog*" << std::endl;
+}	// (Virtual)
+
+/*----------------------------------------------|Object functions :: Public|--*/
+
+
+/*--|Object functions :: Protected|-------------------------------------------*/
+
+/*-------------------------------------------|Object functions :: Protected|--*/
+
+
+/*--|Object functions :: Private|---------------------------------------------*/
+
+/*---------------------------------------------|Object functions :: Private|--*/
+
+
+
+/*--|Class functions :: Public|-----------------------------------------------*/
+
+/*-----------------------------------------------|Class functions :: Public|--*/
+
+
+/*--|Class functions :: Protected|--------------------------------------------*/
+
+/*--------------------------------------------|Class functions :: Protected|--*/
+
+
+/*--|Class functions :: Private|----------------------------------------------*/
+
+/*----------------------------------------------|Class functions :: Private|--*/
+
+
+
+/*--|Operators Overload|------------------------------------------------------*/
+
+Dog &	Dog::operator=(Dog const & other) {
+	
+	std::cout << "Copy assignment Dog operator called" << std::endl;
+	if (this != &other) {
 		
-		// Attributes
+		this->_type = other.getType();
+	}
 
-		// Functions
+	return (*this);
+}	// Cannonical
 
-		// Hidden Constructor
+/*------------------------------------------------------|Operators Overload|--*/
 
-	protected:
-		
-		// Attributes
 
-		// Functions
 
-		// Hidden Constructor (except for inheritance)
+/*--|Getters|-----------------------------------------------------------------*/
 
-	public:
+/*-----------------------------------------------------------------|Getters|--*/
 
-		// Constructors & Destructors
-		Dog(void);						// Cannonical
-		Dog(Dog const & other);	// Cannonical
-		~Dog(void);						// Cannonical
 
-		// Functions
+/*--|Setters|-----------------------------------------------------------------*/
 
-		// Operators overload
-		Dog &	operator=(Dog const & other); // Cannonical
+/*-----------------------------------------------------------------|Setters|--*/
 
-		// Getters
 
-		// Setters
 
-};
+/*--|Class Attributes|--------------------------------------------------------*/
 
-#endif
+/*--------------------------------------------------------|Class Attributes|--*/

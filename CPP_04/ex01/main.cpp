@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:42:41 by nigarcia          #+#    #+#             */
-/*   Updated: 2023/09/30 12:59:58 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/03 09:59:30 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,44 @@ int	main(void) {
 	std::cout << "This is animal4, his type is "<< animal4.getType() << std::endl;
 	std::cout << "Animal4 will make a sound : "; animal4.makeSound();
 	
-	std::cout << std::endl;
-
 	delete animal3;
+	
+	
+	
+	// std::cout << std::endl;
+	
+	// Cat	cat1 = Cat();	std::cout << std::endl;
+	
+	// std::cout << "Printing idea 58 of cat1 : " << cat1.getBrain()->getIdea(58) << std::endl;
+	// cat1.getBrain()->getIdea(58) = "Salut";
+	// std::cout << "Printing idea 58 of cat1 : " << cat1.getBrain()->getIdea(58) << std::endl;
+	// cat1.getBrain()->setIdea(58, "Salut");
+	// std::cout << "Printing idea 58 of cat1 : " << cat1.getBrain()->getIdea(58) << std::endl << std::endl;
+
+	// Dog*	dog1 = new Dog();	std::cout << std::endl;
+
+	// std::cout << "Printing idea 58 of dog1 : " << dog1->getBrain()->getIdea(58) << std::endl;
+	// dog1->getBrain()->getIdea(58) = "Salut";
+	// std::cout << "Printing idea 58 of dog1 : " << dog1->getBrain()->getIdea(58) << std::endl;
+	// dog1->getBrain()->setIdea(58, "Salut");
+	// std::cout << "Printing idea 58 of dog1 : " << dog1->getBrain()->getIdea(58) << std::endl << std::endl;
+	
+	// Cat* cat2 = new Cat();	std::cout << std::endl;
+	
+	// *cat2 = cat1;			std::cout << std::endl;
+
+	// std::cout << "Printing idea 58 of cat2 : " << cat2->getBrain()->getIdea(58) << std::endl << std::endl;
+
+	// delete cat2;			std::cout << std::endl;
+	
+	// Dog*	dog2 = new Dog(*dog1);	std::cout << std::endl;
+
+	// dog1->getBrain()->setIdea(58, "Pas salut");
+
+	// std::cout << "Printing idea 58 of dog2 : " << dog2->getBrain()->getIdea(58) << std::endl << std::endl;
+
+	// delete dog2;			std::cout << std::endl;
+	// delete dog1;			std::cout << std::endl;
+	
 	return (0);
 }
