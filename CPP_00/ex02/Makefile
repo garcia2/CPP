@@ -1,19 +1,18 @@
 NAME		= account
-SRCSDIR		= .
-OBJSDIR		= objs
-INCLUDES	= .
+INCLUDES	= HPP/
 
-SRCS		= Account.cpp \
-			tests.cpp
+SRCS		=	tests.cpp		\
+				CPP/Account.cpp	\
+			
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRCSDIR)/$(SRCS)
+$(NAME): $(SRCS)
 	@echo "Assembling $@"
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ $^
 
 clean:
 

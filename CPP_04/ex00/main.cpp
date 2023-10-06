@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:42:41 by nigarcia          #+#    #+#             */
-/*   Updated: 2023/09/30 12:59:58 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/05 13:31:40 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,18 @@ int	main(void) {
 	delete animal3;
 	return (0);
 }
+
+// #include <iostream>
+// #include "WrongAnimal.hpp"
+// #include "WrongCat.hpp"
+
+// int main()
+// {
+// 	const WrongAnimal* meta = new WrongAnimal();
+// 	const WrongAnimal* i = new WrongCat();
+	
+// 	std::cout << i->getType() << " " << std::endl;
+	
+// 	i->makeSound(); //will output the cat sound!
+// 	meta->makeSound();
+// }

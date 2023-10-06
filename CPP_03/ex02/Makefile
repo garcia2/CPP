@@ -1,21 +1,19 @@
 NAME		= clapTrap
-SRCSDIR		= .
-OBJSDIR		= objs
-INCLUDES	= .
+INCLUDES	= HPP/
 
-SRCS		= main.cpp \
-			ClapTrap.cpp \
-			ScavTrap.cpp \
-			FragTrap.cpp
+SRCS		= main.cpp				\
+				CPP/ClapTrap.cpp	\
+				CPP/ScavTrap.cpp	\
+				CPP/FragTrap.cpp	\
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRCSDIR)/$(SRCS)
+$(NAME): $(SRCS)
 	@echo "Assembling $@"
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ $^
 
 clean:
 

@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:42:41 by nigarcia          #+#    #+#             */
-/*   Updated: 2023/10/03 09:59:30 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/05 13:35:37 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int	main(void) {
 	
 	delete animal3;
 	
-	
-	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 	// std::cout << std::endl;
 	
 	// Cat	cat1 = Cat();	std::cout << std::endl;
@@ -87,6 +87,44 @@ int	main(void) {
 
 	// delete dog2;			std::cout << std::endl;
 	// delete dog1;			std::cout << std::endl;
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	// int	nbAnimals = 10;
+
+	// Animal*	animals[nbAnimals];
+
+	// for (int i = 0; i < nbAnimals / 2; i++) {
+
+	// 	std::cout << "Construction of animal n°" << i << ":" << std::endl;
+	// 	animals[i] = new Cat();
+	// 	std::cout << std::endl;
+	// }
+
+	// std::cout << std::endl;
+
+	// for (int i = nbAnimals / 2; i < nbAnimals; i++) {
+
+	// 	std::cout << "Construction of animal n°" << i << ":" << std::endl;
+	// 	animals[i] = new Dog();
+	// 	std::cout << std::endl;
+	// }
+
+	// std::cout << std::endl << std::endl;
+
+	// for (int i = 0; i < nbAnimals; i++) {
+
+	// 	std::cout << "Animal n°" << i << " will make a sound : ";
+	// 	animals[i]->makeSound();
+	// }
+
+	// std::cout << std::endl;
+
+	// for (int i = 0; i < nbAnimals; i++) {
+
+	// 	std::cout << "Destruction of animal n°" << i << ":" << std::endl;
+	// 	delete animals[i];
+	// 	std::cout << std::endl;
+	// }	
 	return (0);
 }

@@ -1,21 +1,19 @@
 NAME		= zombie
-SRCSDIR		= .
-OBJSDIR		= objs
-INCLUDES	= .
+INCLUDES	= HPP/
 
-SRCS		= Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
-			main.cpp
+SRCS		=	main.cpp			\
+				CPP/Zombie.cpp		\
+				CPP/newZombie.cpp	\
+				CPP/randomChump.cpp	\
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRCSDIR)/$(SRCS)
+$(NAME): $(SRCS)
 	@echo "Assembling $@"
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ $^
 
 clean:
 

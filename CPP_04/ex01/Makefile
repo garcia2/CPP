@@ -1,22 +1,20 @@
 NAME		= animals
-SRCSDIR		= .
-OBJSDIR		= objs
-INCLUDES	= .
+INCLUDES	= HPP/
 
-SRCS		= main.cpp	\
-			Animal.cpp	\
-			Dog.cpp		\
-			Cat.cpp		\
-			Brain.cpp
+SRCS		=	main.cpp		\
+				CPP/Animal.cpp	\
+				CPP/Dog.cpp		\
+				CPP/Cat.cpp		\
+				CPP/Brain.cpp	\
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRCSDIR)/$(SRCS)
+$(NAME): $(SRCS)
 	@echo "Assembling $@"
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ $^
 
 clean:
 

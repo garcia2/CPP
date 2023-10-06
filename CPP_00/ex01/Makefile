@@ -1,20 +1,19 @@
 NAME		= phonebook
-SRCSDIR		= .
-OBJSDIR		= objs
-INCLUDES	= .
+INCLUDES	= HPP/
 
-SRCS		= Contact.cpp \
-			  PhoneBook.cpp \
-			  main.cpp
+SRCS		=	main.cpp			\
+				CPP/Contact.cpp		\
+				CPP/PhoneBook.cpp	\
+			  
 
 CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME): $(SRCSDIR)/$(SRCS)
+$(NAME): $(SRCS)
 	@echo "Assembling $@"
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ $^
 
 clean:
 
