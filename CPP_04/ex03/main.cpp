@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:46:35 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 11:00:22 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/06 11:15:15 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main(void) {
 
-	std::cout << "nothing to do yet" << std::endl;
-	
+	std::cout << "Nothing to do yet" << std::endl;
+
 	return (0);
 }

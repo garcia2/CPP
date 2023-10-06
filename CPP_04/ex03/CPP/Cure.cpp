@@ -1,43 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 11:50:03 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/06 12:16:41 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Cure.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-AMateria::AMateria(void) {
+Cure::Cure(void) : AMateria("cure") {
 	
-	//std::cout << "Default AMateria constructor called" << std::endl;
+	//std::cout << "Default Cure constructor called" << std::endl;
 
 	return;
 }	// Cannonical
 
-AMateria::AMateria(std::string const & type) : _type(type) {
-
-	//std::cout << "Parametric AMateria constructor called" << std::endl;
-	return;
-}
-
-AMateria::AMateria(AMateria const & other) {
+Cure::Cure(Cure const & other) : AMateria(other) {
 	
-	//std::cout << "Copy AMateria constructor called" << std::endl;
-	*this = other; // Be careful to properly overload the '=' operator for this to work
+	//std::cout << "Copy Cure constructor called" << std::endl;
+	//*this = other; // Be careful to properly overload the '=' operator for this to work
 	
 	return;
 }	// Cannonical
 
-AMateria::~AMateria(void) {
+Cure::~Cure(void) {
 	
-	//std::cout << "AMateria Destructor called" << std::endl;
+	//std::cout << "Cure Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -48,9 +42,14 @@ AMateria::~AMateria(void) {
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
-void AMateria::use(ICharacter& target) {
+void Cure::use(ICharacter& target) {
 	
-	std::cout << "Can't use a basic materia... " << target.getName() << " laughs loud at you !" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}
+
+Cure* Cure::clone() const {
+
+	return (new Cure());
 }
 
 /*----------------------------------------------|Object functions :: Public|--*/
@@ -85,14 +84,15 @@ void AMateria::use(ICharacter& target) {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-AMateria &	AMateria::operator=(AMateria const & other) {
+Cure &	Cure::operator=(Cure const & other) {
 	
-	std::cout << "Copy assignment AMateria operator called" << std::endl;
-	if (this != &other) {
+	// std::cout << "Copy assignment Cure operator called" << std::endl;
+	// if (this != &other) {
 		
-		this->_type = other.getType();
-	}
+	// 	this->_type = other.getType(); // peu d'interet le type est le même pour tous les cure
+	// }
 
+	(void) other;
 	return (*this);
 }	// Cannonical
 
@@ -101,11 +101,6 @@ AMateria &	AMateria::operator=(AMateria const & other) {
 
 
 /*--|Getters|-----------------------------------------------------------------*/
-
-std::string const & AMateria::getType() const {
-
-	return (this->_type);
-}
 
 /*-----------------------------------------------------------------|Getters|--*/
 
