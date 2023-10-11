@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/27 16:23:36 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 11:50:02 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	Harl::complain( std::string level ) {
 			return ;
 		}
 	}
-	std::cerr << "Harl : Error : " << level << " is not a valid level" << std::endl;
+	std::cerr << "Harl : Error : \"" << level << "\" is not a valid level" << std::endl;
 }
 
 /*----------------------------------------------|Object functions :: Public|--*/
