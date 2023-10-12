@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 22:04:10 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 15:04:18 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Weapon::Weapon(void) : _type(". . .T'as R frero"){
 	//std::cout << "Default Weapon constructor called" << std::endl;
 
 	return;
-}	// Cannonical
+}
 
 Weapon::Weapon(std::string type) : _type(type) {
 	
@@ -33,7 +33,7 @@ Weapon::~Weapon(void) {
 	//std::cout << "Weapon ["<< this->_type << "] Destructor called" << std::endl;
 
 	return;
-}	// Cannonical
+}
 
 /*----------------------------------------------|Constructors & Destructors|--*/
 

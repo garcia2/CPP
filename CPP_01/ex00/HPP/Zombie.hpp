@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 17:52:23 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 14:58:51 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ class Zombie {
 		
 		// Functions
 
+		// Hidden Constructors
+		Zombie(void);
+
 	public:
 
 		// Constructors & Destructors
-		Zombie(void);
 		Zombie(std::string name);
 		~Zombie(void);
 

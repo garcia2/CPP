@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 22:03:37 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 15:08:08 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ HumanB::HumanB(std::string name) : _name(name), _weapon(NULL) {
 	//std::cout << "HumanB ["<< this->_name << "] constructor called" << std::endl;
 
 	return;
-}	// Cannonical
+}
 
 HumanB::~HumanB(void) {
 	
 	//std::cout << "HumanB ["<< this->_name << "] Destructor called" << std::endl;
 
 	return;
-}	// Cannonical
+}
 
 /*----------------------------------------------|Constructors & Destructors|--*/
 

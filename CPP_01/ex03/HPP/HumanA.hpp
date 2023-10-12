@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 10:10:52 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 15:03:54 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class HumanA {
 	public:
 
 		// Constructors & Destructors
-		HumanA(std::string name, Weapon& weapon);   // Cannonical
-		~HumanA(void);                         		// Cannonical
+		HumanA(std::string name, Weapon& weapon);
+		~HumanA(void);
 
 		// Functions
 		void	attack(void) const;

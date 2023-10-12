@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/25 22:04:31 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 15:08:16 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon){
 	//std::cout << "HumanA ["<< this->_name << "] constructor called" << std::endl;
 
 	return;
-}	// Cannonical
+}
 
 HumanA::~HumanA(void) {
 	
 	//std::cout << "HumanA ["<< this->_name << "] Destructor called" << std::endl;
 
 	return;
-}	// Cannonical
+}
 
 /*----------------------------------------------|Constructors & Destructors|--*/
 

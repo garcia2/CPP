@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClassTemplate.cpp                                  :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/11 14:40:08 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/11 12:46:42 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClassTemplate.hpp"
+#include "Character.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ClassTemplate::ClassTemplate(void) {
+Character::Character(void) {
 	
-	std::cout << "Default ClassTemplate constructor called" << std::endl;
-	
+	std::cout << "Default Character constructor called" << std::endl;
+
 	return;
 }	// Cannonical
 
-ClassTemplate::ClassTemplate(ClassTemplate const & other) {
+Character::Character(Character const & other) {
 	
-	std::cout << "Copy ClassTemplate constructor called" << std::endl;
+	std::cout << "Copy Character constructor called" << std::endl;
 	*this = other; // Be careful to properly overload the '=' operator for this to work
 	
 	return;
 }	// Cannonical
 
-ClassTemplate::~ClassTemplate(void) {
+Character::~Character(void) {
 	
-	std::cout << "ClassTemplate Destructor called" << std::endl;
+	std::cout << "Character Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -41,6 +41,27 @@ ClassTemplate::~ClassTemplate(void) {
 
 
 /*--|Object functions :: Public|----------------------------------------------*/
+
+void Character::equip(AMateria* m) {
+
+	int	i = 0;
+
+	while (this->_inventory[i] != NULL && i < 4)
+		i++;
+	if (i == 4)
+		return;
+	this->_inventory[i] = m;
+}
+
+void Character::unequip(int idx) {
+
+	
+}
+
+void Character::use(int idx, ICharacter& target) {
+
+	
+}
 
 /*----------------------------------------------|Object functions :: Public|--*/
 
@@ -74,13 +95,18 @@ ClassTemplate::~ClassTemplate(void) {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & other) {
+Character &	Character::operator=(Character const & other) {
 	
-	std::cout << "Copy assignment ClassTemplate operator called" << std::endl;
+	std::cout << "Copy assignment Character operator called" << std::endl;
 	if (this != &other) {
 		
 		// this->_param = rhs.getParam();
 		// ...
+		this->_name = other.getName();
+		for (int i = 0; i < 4; i++) {
+
+			this->_inventory[i] = other._inventory[i];
+		}
 	}
 
 	return (*this);
@@ -91,6 +117,11 @@ ClassTemplate &	ClassTemplate::operator=(ClassTemplate const & other) {
 
 
 /*--|Getters|-----------------------------------------------------------------*/
+
+std::string const & Character::getName() const {
+
+	return (this->_name)
+}
 
 /*-----------------------------------------------------------------|Getters|--*/
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClassTemplate.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 10:52:13 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 14:41:40 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ class ClassTemplate {
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(void);						// Cannonical
 		ClassTemplate(ClassTemplate const & other);	// Cannonical
-		~ClassTemplate(void);						// Cannonical
+		ClassTemplate(void);						// Cannonical
+		virtual ~ClassTemplate(void);				// Cannonical
 
 		// Functions
 
