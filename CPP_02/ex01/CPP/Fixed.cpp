@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 00:22:39 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 18:10:44 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Fixed::Fixed(int const raw) {
 	this->_rawBits = raw * (1 << Fixed::_nbFractionalBits);
 	return;
 }
+
 Fixed::Fixed(float const raw) {
 
 	std::cout << "Float constructor called" << std::endl;
@@ -98,7 +99,7 @@ std::ostream &	operator<<(std::ostream & o, Fixed const & i) {
 
 int	Fixed::getRawBits(void) const {
 
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->_rawBits);
 }
 

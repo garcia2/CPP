@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:26:34 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/11 11:05:58 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/13 22:53:20 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,14 @@ void	prompt(PhoneBook phoneBook) {
 			prompt_commands();
 			std::getline(std::cin, command);
 		}
-		if (command.compare("ADD") == 0)
-			phoneBook.add_contact();
+		if (command.compare("ADD") == 0) {
+			
+			if (!phoneBook.add_contact()) {
+
+				std::cout << std::endl << "	Bye bye !" << std::endl;
+				return;
+			}
+		}
 		else if(command.compare("SEARCH") == 0) {
 
 			if (!search(phoneBook)) {

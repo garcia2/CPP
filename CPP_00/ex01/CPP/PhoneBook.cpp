@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:49:01 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 12:17:42 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/13 22:50:42 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ PhoneBook::~PhoneBook(void) {
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
-void	PhoneBook::add_contact(void) {
+int	PhoneBook::add_contact(void) {
 
 	std::string	input;
 	Contact		contact;
@@ -41,22 +41,34 @@ void	PhoneBook::add_contact(void) {
 	contact.setIndex(this->_nextIndex);
 	
 	input = PhoneBook::_getInput("Input first name : ");
+	if (input.compare("") == 0)
+		return (0);
 	contact.setFirstName(input);
 	
 	input = PhoneBook::_getInput("Input last name : ");
+	if (input.compare("") == 0)
+		return (0);
 	contact.setLastName(input);
 	
 	input = PhoneBook::_getInput("Input nickname : ");
+	if (input.compare("") == 0)
+		return (0);
 	contact.setNickName(input);
 	
 	input = PhoneBook::_getInputPhoneNumber();
+	if (input.compare("") == 0)
+		return (0);
 	contact.setPhoneNumber(input);
 
 	input = PhoneBook::_getInput("Input his darkest secret : ");
+	if (input.compare("") == 0)
+		return (0);
 	contact.setDarkestSecret(input);
 	
 	this->_contacts[this->_nextIndex] = contact;
 	this->_incrementNextIndex();
+
+	return (1);
 }
 
 void	PhoneBook::fill(void) {
@@ -131,6 +143,11 @@ std::string	PhoneBook::_getInput(std::string message) {
 	std::getline(std::cin, input);
 	while (input.length() == 0) {
 		
+		if (std::cin.eof()) {
+		
+			std::cout << std::endl;
+			return ("");
+		}
 		std::cout << "You can't leave an empty field" << std::endl;
 		std::cout << message;
 		std::getline(std::cin, input);
@@ -146,6 +163,11 @@ std::string	PhoneBook::_getInputPhoneNumber(void) {
 	std::getline(std::cin, input);
 	while (!PhoneBook::isValidNumber(input)) {
 
+		if (std::cin.eof()) {
+		
+			std::cout << std::endl;
+			return ("");
+		}
 		std::cout << "This is not a valid phone number (ex: 4242424242)" << std::endl;
 		std::cout << "Input phone number :";
 		std::getline(std::cin, input);

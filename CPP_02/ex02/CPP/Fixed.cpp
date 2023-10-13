@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 00:21:43 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/12 11:59:53 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,12 +128,12 @@ Fixed 	Fixed::operator-(Fixed const & rhs) const {
 
 Fixed 	Fixed::operator*(Fixed const & rhs) const {
 	
-	return (Fixed((this->_rawBits / (float)(1 << Fixed::_nbFractionalBits)) * (rhs.getRawBits()) / (float)(1 << Fixed::_nbFractionalBits)));
+	return (Fixed((this->_rawBits / (float)(1 << Fixed::_nbFractionalBits)) * (rhs.getRawBits() / (float)(1 << Fixed::_nbFractionalBits))));
 }
 
 Fixed 	Fixed::operator/(Fixed const & rhs) const {
 	
-	return (Fixed((this->_rawBits / (float)(1 << Fixed::_nbFractionalBits)) / (rhs.getRawBits()) / (float)(1 << Fixed::_nbFractionalBits)));
+	return (Fixed((this->_rawBits / (float)(1 << Fixed::_nbFractionalBits)) / (rhs.getRawBits() / (float)(1 << Fixed::_nbFractionalBits))));
 }
 
 bool	Fixed::operator>(Fixed const & rhs) const {

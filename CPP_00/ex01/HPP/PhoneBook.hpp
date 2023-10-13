@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 09:30:24 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 12:15:56 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/13 22:50:58 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class PhoneBook {
 		~PhoneBook(void);
 
 		// Functions
-		void			add_contact(void);
+		int				add_contact(void);
 		void			printContactsLine(int padding) const;
 		void			fill(void);
 		static int		isValidNumber(std::string str);

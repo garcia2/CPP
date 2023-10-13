@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 17:02:38 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/27 17:34:42 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 18:07:48 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ int main( void ) {
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
+
+	std::cout << "a's raw bits is " << a.getRawBits() << std::endl;
+	std::cout << "b's raw bits is " << b.getRawBits() << std::endl;
+	std::cout << "c's raw bits is " << c.getRawBits() << std::endl;
+	std::cout << "d's raw bits is " << d.getRawBits() << std::endl;
 	
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;

@@ -1,25 +1,66 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/07/23 18:46:21 by ael-khni          #+#    #+#              #
+#    Updated: 2023/10/13 23:07:34 by nicolas          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME		= humans
-INCLUDES	= HPP/
+	
+CC			= c++
+FLAGS		= -Wall -Wextra -Werror -std=c++98
+RM			= rm -rf
 
-SRCS		=	main.cpp		\
-				CPP/Weapon.cpp	\
-				CPP/HumanA.cpp	\
-				CPP/HumanB.cpp	\
+INCLUDE		= HPP/
 
-CC			= clang++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+OBJDIR = .objFiles
+
+
+FILES		=	main		\
+				CPP/Weapon	\
+				CPP/HumanA	\
+				CPP/HumanB	\
+
+
+SRC			= $(FILES:=.cpp)
+
+OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
+
+
+#Colors:
+GREEN		=	\e[92m
+YELLOW		=	\e[93m
+RESET		=	\e[0m
+
+#Debug 
+ifeq ($(DEBUG), 1)
+   OPTS = -g
+endif
+
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	@echo "Assembling $@"
-	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ $^
+$(NAME): $(OBJ)
+	@$(CC) $(OBJ) -I $(INCLUDE) $(OPTS) -o $(NAME)
+	@printf "$(_SUCCESS) $(GREEN)- Executable ready.\n$(RESET)"
+
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	@$(CC) $(FLAGS) -I $(INCLUDE) $(OPTS) -c $< -o $@
 
 clean:
+	@$(RM) $(OBJDIR) $(OBJ)
+	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
 
 fclean: clean
-	rm -rf $(NAME)
+	@$(RM) $(NAME)
+	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
 re: fclean all
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
