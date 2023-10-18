@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:42:41 by nigarcia          #+#    #+#             */
-/*   Updated: 2023/10/18 15:57:32 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:00:30 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,25 @@ void	test1(void) {
 	std::cout << "This is animal3 again, his type is now "<< animal3->getType() << std::endl;
 	std::cout << "Animal3 will make a sound : "; animal3->makeSound();
 
-	std::cout << std::endl << "------------------" << std::endl << std::endl ;
+	std::cout << std::endl << "------------------" << std::endl << std::endl;
 
 	Dog	dog1 = Dog();	std::cout << std::endl;	
 	std::cout << "This is dog1, his type is "<< dog1.getType() << std::endl;
 	std::cout << "dog1 will make a sound : "; dog1.makeSound();
 
-	std::cout << std::endl << "------------------" << std::endl << std::endl ;
+	std::cout << std::endl << "------------------" << std::endl << std::endl;
 
 	Cat	cat1 = Cat();	std::cout << std::endl;
 	std::cout << "This is cat1, his type is "<< cat1.getType() << std::endl;
 	std::cout << "cat1 will make a sound : "; cat1.makeSound();
 
 
-	std::cout << std::endl << "------------------" << std::endl << std::endl ;
+	std::cout << std::endl << "------------------" << std::endl << std::endl;
 
 	Animal animal4 = Cat();	std::cout << std::endl;
 	std::cout << "This is animal4, his type is "<< animal4.getType() << std::endl;
 	std::cout << "Animal4 will make a sound : "; animal4.makeSound();
+	std::cout << std::endl << "------------------" << std::endl << std::endl;
 	
 	delete animal3;
 }
@@ -62,15 +63,18 @@ void	test2(void) {
 	cat1.getBrain()->getIdea(58) = "Salut";
 	std::cout << "Printing idea 58 of cat1 : " << cat1.getBrain()->getIdea(58) << std::endl;
 	cat1.getBrain()->setIdea(58, "Salut");
-	std::cout << "Printing idea 58 of cat1 : " << cat1.getBrain()->getIdea(58) << std::endl << std::endl;
+	std::cout << "Printing idea 58 of cat1 : " << cat1.getBrain()->getIdea(58) << std::endl;
 
+	std::cout << std::endl << "------------------" << std::endl << std::endl;
+	
 	Dog*	dog1 = new Dog();	std::cout << std::endl;
 
-	std::cout << std::endl;
+	//Test copie profonde
+	std::cout << "--Test copie profonde" <<std::endl;
 	{
 		Dog tempdog = *dog1;
 	}
-	std::cout << std::endl;
+	std::cout << "--" << std::endl;
 	
 	std::cout << "Printing idea 58 of dog1 : " << dog1->getBrain()->getIdea(58) << std::endl;
 	dog1->getBrain()->getIdea(58) = "Salut";
@@ -78,13 +82,15 @@ void	test2(void) {
 	dog1->getBrain()->setIdea(58, "Salut");
 	std::cout << "Printing idea 58 of dog1 : " << dog1->getBrain()->getIdea(58) << std::endl << std::endl;
 	
+	std::cout << std::endl << "------------------" << std::endl << std::endl;
+
 	Cat* cat2 = new Cat();	std::cout << std::endl;
-	
 	*cat2 = cat1;			std::cout << std::endl;
 
 	std::cout << "Printing idea 58 of cat2 : " << cat2->getBrain()->getIdea(58) << std::endl << std::endl;
-
 	delete cat2;			std::cout << std::endl;
+
+	std::cout << std::endl << "------------------" << std::endl << std::endl;
 	
 	Dog*	dog2 = new Dog(*dog1);	std::cout << std::endl;
 
