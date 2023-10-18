@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/11 12:46:42 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/12 18:13:41 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,23 +44,31 @@ Character::~Character(void) {
 
 void Character::equip(AMateria* m) {
 
-	int	i = 0;
+	int	idx = 0;
 
-	while (this->_inventory[i] != NULL && i < 4)
-		i++;
-	if (i == 4)
+	while (this->_inventory[idx] != NULL && idx < 4)
+		idx++;
+	if (idx == 4)
 		return;
-	this->_inventory[i] = m;
+	this->_inventory[idx] = m;
 }
 
 void Character::unequip(int idx) {
 
-	
+	if (i > 0 || i < 3)
+		return;
+	this->_inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target) {
 
+	if (i > 0 || i < 3)
+		return;
 	
+	if (this->_inventory[idx] != NULL){
+
+		this->_inventory[idx]->use(target);
+	}
 }
 
 /*----------------------------------------------|Object functions :: Public|--*/
