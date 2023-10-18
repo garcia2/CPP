@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 09:53:44 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 14:00:02 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/18 12:45:47 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ int	main(void) {
 	main_attack(billy, Samuel);
 	main_attack(Jimmy, bob);
 	Jimmy.beRepaired(45);
+
+	std::cout << std::endl;
+
 	Samuel.guardGate();
 
 	std::cout << std::endl;

@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 14:13:11 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:39:03 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,33 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ScavTrap::ScavTrap(void) {
+ScavTrap::ScavTrap(void) : ClapTrap() {
 	
 	std::cout << "Default ScavTrap constructor called" << std::endl;
 	
 	this->_hitPoints = ScavTrap::_hitPointsRef;
 	this->_energyPoints = ScavTrap::_energyPointsRef;
 	this->_attackDamages = ScavTrap::_attackDamagesRef;
-	this->_name = "defaultName";
-
-	return;
 }	// Cannonical (Private)
 
-ScavTrap::ScavTrap(std::string name) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 
 	std::cout << "Parametric ScavTrap " << name << " constructor called" << std::endl;
 	
 	this->_hitPoints = ScavTrap::_hitPointsRef;
 	this->_energyPoints = ScavTrap::_energyPointsRef;
 	this->_attackDamages = ScavTrap::_attackDamagesRef;
-
-	this->_name = name;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & src) {
 	
 	std::cout << "Copy ScavTrap constructor called" << std::endl;
 	*this = src;
-	
-	return;
 }	// Cannonical
 
 ScavTrap::~ScavTrap(void) {
 	
 	std::cout << "ScavTrap " << this->_name << " Destructor called" << std::endl;
-
-	return;
 }	// Cannonical
 
 /*----------------------------------------------|Constructors & Destructors|--*/
@@ -57,6 +48,18 @@ ScavTrap::~ScavTrap(void) {
 
 
 /*--|Object functions :: Public|----------------------------------------------*/
+
+void 	ScavTrap::attack(const std::string& target) {
+	
+	if (this->_hitPoints == 0 || this->_energyPoints == 0)
+	{
+		std::cout << this->_name << " can't do a ScavTrap special attack, ";
+		std::cout << ((this->_hitPoints == 0) ? "he's dead..." : "he has no energy.") << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " do a ScavTrap special attack and deals " << this->_attackDamages << " damage to " << target << " !" << std::endl;
+	this->_energyPoints--;
+}	// Overide
 
 void	ScavTrap::guardGate(void) {
 

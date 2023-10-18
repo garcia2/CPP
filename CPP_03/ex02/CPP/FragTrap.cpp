@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 14:13:00 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:18:42 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,32 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-FragTrap::FragTrap(void) {
+FragTrap::FragTrap(void) : ClapTrap() {
 	
 	std::cout << "Default FragTrap constructor called" << std::endl;
 	
 	this->_hitPoints = FragTrap::_hitPointsRef;
 	this->_energyPoints = FragTrap::_energyPointsRef;
 	this->_attackDamages = FragTrap::_attackDamagesRef;
-	this->_name = "defaultName";
-
-	return;
 }	// Cannonical (Private)
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 
 	std::cout << "Parametric FragTrap " << name << " constructor called" << std::endl;
 	this->_hitPoints = FragTrap::_hitPointsRef;
 	this->_energyPoints = FragTrap::_energyPointsRef;
 	this->_attackDamages = FragTrap::_attackDamagesRef;
-	this->_name = name;
 }
 
 FragTrap::FragTrap(FragTrap const & src) {
 	
 	std::cout << "Copy FragTrap constructor called" << std::endl;
 	*this = src;
-	
-	return;
 }	// Cannonical
 
 FragTrap::~FragTrap(void) {
 	
 	std::cout << "FragTrap " << this->_name << " Destructor called" << std::endl;
-
-	return;
 }	// Cannonical
 
 /*----------------------------------------------|Constructors & Destructors|--*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 09:53:44 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 14:21:48 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/18 12:25:38 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ int	main(void) {
 	main_attack(billy, samuel);
 	main_attack(jimmy, bob);
 	jimmy.beRepaired(45);
+	
+	std::cout << std::endl;
+	
 	samuel.guardGate();
 
 	std::cout << std::endl;
@@ -59,6 +62,9 @@ int	main(void) {
 	main_attack(tom, samuel);
 	main_attack(jimmy, paul);
 	paul.beRepaired(70);
+
+	std::cout << std::endl;
+
 	tom.highFive();
 	
 	std::cout << std::endl;

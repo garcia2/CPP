@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 09:53:44 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/28 15:37:51 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/18 13:07:52 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	main(void) {
 	ScavTrap jimmy("Jimmy"); 	std::cout << std::endl;
 	FragTrap tom("Tom");		std::cout << std::endl;
 	FragTrap paul("Paul"); 		std::cout << std::endl;
-	DiamondTrap pit("Pit");		std::cout << std::endl;
 	
 	billy.toPrint();			std::cout << std::endl;
 	bob.toPrint();				std::cout << std::endl;
@@ -46,7 +45,6 @@ int	main(void) {
 	jimmy.toPrint();			std::cout << std::endl;
 	tom.toPrint();				std::cout << std::endl;
 	paul.toPrint();				std::cout << std::endl;
-	pit.toPrint();				std::cout << std::endl;
 
 	main_attack(samuel, jimmy);
 	main_attack(billy, samuel);
@@ -65,8 +63,11 @@ int	main(void) {
 	tom.highFive();
 	
 	std::cout << std::endl;
-
-	pit.whoAmI();
+	
+	DiamondTrap pit("Pit");		std::cout << std::endl;
+	pit.toPrint();				std::cout << std::endl;
+	pit.whoAmI();				std::cout << std::endl;
+	
 	main_attack(billy, pit);
 	main_attack(samuel, pit);
 	main_attack(tom, pit);
@@ -77,9 +78,9 @@ int	main(void) {
 
 	std::cout << std::endl;
 	
-	DiamondTrap pitCpy = pit;
+	DiamondTrap pitCpy = pit;	std::cout << std::endl;
 	pitCpy.toPrint();			std::cout << std::endl;
-	pitCpy.whoAmI();
+	pitCpy.whoAmI();			std::cout << std::endl;
 
 	return (0);
 }

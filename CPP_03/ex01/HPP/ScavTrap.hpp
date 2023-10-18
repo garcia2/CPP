@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 13:47:43 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:49:32 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class ScavTrap : public ClapTrap {
 		~ScavTrap(void);					// Cannonical
 
 		// Functions
+		void	attack(const std::string& target);	// Overide
 		void	guardGate(void);
 
 		// Operators overload

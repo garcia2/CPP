@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/09/29 14:13:04 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:18:27 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@ ClapTrap::ClapTrap(void) {
 	this->_energyPoints = ClapTrap::_energyPointsRef;
 	this->_attackDamages = ClapTrap::_attackDamagesRef;
 	this->_name = "defaultName";
-
-	return;
 }	// Cannonical (Protected)
 
 ClapTrap::ClapTrap(std::string name) {
 
 	std::cout << "Parametric ClapTrap " << name << " constructor called" << std::endl;
-
+	
 	this->_hitPoints = ClapTrap::_hitPointsRef;
 	this->_energyPoints = ClapTrap::_energyPointsRef;
 	this->_attackDamages = ClapTrap::_attackDamagesRef;
@@ -40,15 +38,11 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
 	
 	std::cout << "Copy ClapTrap constructor called" << std::endl;
 	*this = src;
-	
-	return;
 }	// Cannonical
 
 ClapTrap::~ClapTrap(void) {
 	
 	std::cout << "ClapTrap " << this->_name << " Destructor called" << std::endl;
-
-	return;
 }	// Cannonical
 
 /*----------------------------------------------|Constructors & Destructors|--*/
