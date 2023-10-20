@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/18 16:48:25 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/20 16:07:51 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ class ClapTrap {
 		~ClapTrap(void);					// Cannonical
 
 		// Functions
-		virtual	void 	attack(const std::string& target);
+		virtual void 	attack(const std::string& target);
 		void 			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 		void			toPrint() const;

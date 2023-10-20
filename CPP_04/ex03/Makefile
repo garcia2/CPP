@@ -1,23 +1,64 @@
-NAME		= magic
-INCLUDES	= HPP/
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/07/23 18:46:21 by ael-khni          #+#    #+#              #
+#    Updated: 2023/10/18 18:17:22 by nigarcia         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRCS		=	main.cpp			\
-				CPP/AMateria.cpp	\
+NAME		= animals
+	
+CC			= c++
+FLAGS		= -Wall -Wextra -Werror -std=c++98
+RM			= rm -rf
 
-CC			= clang++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+INCLUDE		= HPP/
+
+OBJDIR = .objFiles
+
+
+FILES		=	main			\
+				CPP/AMateria	\
+
+
+SRC			= $(FILES:=.cpp)
+
+OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
+
+
+#Colors:
+GREEN		=	\e[92m
+YELLOW		=	\e[93m
+RESET		=	\e[0m
+
+#Debug 
+ifeq ($(DEBUG), 1)
+   OPTS = -g
+endif
+
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	@echo "Assembling $@"
-	@$(CC) $(CFLAGS) -I $(INCLUDES) -o $@ $^
+$(NAME): $(OBJ)
+	@$(CC) $(OBJ) -I $(INCLUDE) $(OPTS) -o $(NAME)
+	@printf "$(_SUCCESS) $(GREEN)- Executable $@ ready.\n$(RESET)"
+
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	@$(CC) $(FLAGS) -I $(INCLUDE) $(OPTS) -c $< -o $@
 
 clean:
+	@$(RM) $(OBJDIR) $(OBJ)
+	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
 
 fclean: clean
-	rm -rf $(NAME)
+	@$(RM) $(NAME)
+	@printf "$(YELLOW)    - Executable $@ removed.$(RESET)\n"
 
 re: fclean all
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

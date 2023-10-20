@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 10:44:06 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/20 14:47:10 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Animal::Animal(Animal const & src) {
 	
 	std::cout << "Copy Animal constructor called" << std::endl;
 	// this->_brain = new Brain();
-	this->_brain = NULL;
+	//this->_brain = NULL;
 	*this = src; // Be careful to properly overload the '=' operator for this to work
 	
 	return;

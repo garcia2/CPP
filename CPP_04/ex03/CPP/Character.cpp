@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/12 18:13:41 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:35:44 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,22 @@
 Character::Character(void) {
 	
 	std::cout << "Default Character constructor called" << std::endl;
-
-	return;
 }	// Cannonical
 
 Character::Character(Character const & other) {
 	
 	std::cout << "Copy Character constructor called" << std::endl;
 	*this = other; // Be careful to properly overload the '=' operator for this to work
-	
-	return;
 }	// Cannonical
 
 Character::~Character(void) {
 	
-	std::cout << "Character Destructor called" << std::endl;
+	for (int i = 0; i < 4; i++) {
 
-	return;
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
+	}
+	std::cout << "Character Destructor called" << std::endl;
 }	// Cannonical
 
 /*----------------------------------------------|Constructors & Destructors|--*/
@@ -113,7 +112,11 @@ Character &	Character::operator=(Character const & other) {
 		this->_name = other.getName();
 		for (int i = 0; i < 4; i++) {
 
-			this->_inventory[i] = other._inventory[i];
+			if (this->_inventory[i] != NULL)
+				delete this->_inventory[i];
+			if (other._inventory[i] != NULL)
+				this->_inventory[i] = other._inventory[i].clone();
+			
 		}
 	}
 
