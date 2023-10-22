@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/20 14:47:10 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/21 17:53:14 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 Animal::Animal(void) : _type("Animal") {
 	
 	std::cout << "Default Animal constructor called" << std::endl;
-	this->_brain = new Brain();
 
 	return;
 }	// Cannonical
@@ -25,8 +24,6 @@ Animal::Animal(void) : _type("Animal") {
 Animal::Animal(Animal const & src) {
 	
 	std::cout << "Copy Animal constructor called" << std::endl;
-	// this->_brain = new Brain();
-	//this->_brain = NULL;
 	*this = src; // Be careful to properly overload the '=' operator for this to work
 	
 	return;
@@ -35,7 +32,6 @@ Animal::Animal(Animal const & src) {
 Animal::~Animal(void) {
 	
 	std::cout << "Animal Destructor called" << std::endl;
-	delete this->_brain;
 
 	return;
 }	// Cannonical
@@ -63,9 +59,6 @@ Animal &	Animal::operator=(Animal const & other) {
 	if (this != &other) {
 		
 		this->_type = other.getType();
-		if (this->_brain != NULL)
-			delete this->_brain;
-		this->_brain = new Brain(*other._brain);
 	}
 
 	return (*this);
@@ -80,11 +73,6 @@ Animal &	Animal::operator=(Animal const & other) {
 std::string	Animal::getType(void) const {
 
 	return (this->_type);
-}
-
-Brain*	Animal::getBrain(void) const {
-
-	return (this->_brain);
 }
 
 /*-----------------------------------------------------------------|Getters|--*/

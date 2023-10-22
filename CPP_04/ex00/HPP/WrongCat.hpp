@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 13:17:51 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/21 17:31:39 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class WrongCat : public WrongAnimal {
 		// Constructors & Destructors
 		WrongCat(void);				// Cannonical
 		WrongCat(WrongCat const & other);	// Cannonical
-		~WrongCat(void);				// Cannonical
+		virtual ~WrongCat(void);				// Cannonical
 
 		// Functions
 		void	makeSound(void) const;

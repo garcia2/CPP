@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/21 18:15:01 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/22 16:57:53 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 #include <iostream>
 #include <string>
-#include "AAnimal.hpp"
-#include "Brain.hpp"
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class Dog : public AAnimal { 
+class MateriaSource : public IMateriaSource {
 
 	private:
 		
 		// Attributes
-		Brain*		_brain;
+		AMateria*	_source[4];;
 
 		// Functions
 
@@ -40,18 +40,18 @@ class Dog : public AAnimal {
 	public:
 
 		// Constructors & Destructors
-		Dog(void);				// Cannonical
-		Dog(Dog const & other);	// Cannonical
-		virtual ~Dog(void);				// Cannonical
+		MateriaSource(MateriaSource const & other);	// Cannonical
+		MateriaSource(void);						// Cannonical
+		virtual ~MateriaSource(void);				// Cannonical
 
 		// Functions
-		virtual void	makeSound(void) const;
+		void learnMateria(AMateria* m);
+    	AMateria* createMateria(std::string const & type);
 
 		// Operators overload
-		Dog &	operator=(Dog const & other); // Cannonical
+		MateriaSource &	operator=(MateriaSource const & other); // Cannonical
 
 		// Getters
-		Brain*		getBrain(void) const;
 
 		// Setters
 

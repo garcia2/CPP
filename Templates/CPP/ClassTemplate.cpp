@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClassTemplate.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/11 14:40:08 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/22 17:10:12 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,17 @@
 ClassTemplate::ClassTemplate(void) {
 	
 	std::cout << "Default ClassTemplate constructor called" << std::endl;
-	
-	return;
 }	// Cannonical
 
 ClassTemplate::ClassTemplate(ClassTemplate const & other) {
 	
 	std::cout << "Copy ClassTemplate constructor called" << std::endl;
 	*this = other; // Be careful to properly overload the '=' operator for this to work
-	
-	return;
 }	// Cannonical
 
 ClassTemplate::~ClassTemplate(void) {
 	
 	std::cout << "ClassTemplate Destructor called" << std::endl;
-
-	return;
 }	// Cannonical
 
 /*----------------------------------------------|Constructors & Destructors|--*/

@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+         #
+#    By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/23 18:46:21 by ael-khni          #+#    #+#              #
-#    Updated: 2023/10/18 15:34:48 by nigarcia         ###   ########.fr        #
+#    Updated: 2023/10/22 15:32:14 by nicolas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= animals
 	
-CC			= c++
+CC			= c++                                        
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 

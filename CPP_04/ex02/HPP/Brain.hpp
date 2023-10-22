@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/02 13:28:44 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/21 17:35:45 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Brain {
 		// Constructors & Destructors
 		Brain(void);					// Cannonical
 		Brain(Brain const & other);		// Cannonical
-		~Brain(void);					// Cannonical
+		virtual ~Brain(void);					// Cannonical
 
 		// Functions
 		void	toString(void) const;

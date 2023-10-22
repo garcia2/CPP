@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/11 12:37:14 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/22 17:07:30 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASSTEMPLATE_HPP
-# define CLASSTEMPLATE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 #include <iostream>
-//#include <string>
+#include <string>
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
@@ -27,6 +27,7 @@ class Character : public ICharacter {
 		AMateria*			_inventory[4];
 
 		// Functions
+		void	_initInventory(void);
 
 		// Hidden Constructor
 		Character(void);						// Cannonical
@@ -42,8 +43,9 @@ class Character : public ICharacter {
 	public:
 
 		// Constructors & Destructors
+		Character(const std::string& name);
 		Character(Character const & other);		// Cannonical
-		~Character(void);						// Cannonical
+		virtual ~Character(void);				// Cannonical
 
 		// Functions
 		void equip(AMateria* m);

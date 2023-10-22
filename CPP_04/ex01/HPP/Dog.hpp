@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 13:27:42 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/21 18:10:36 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal { 
 
 	private:
 		
 		// Attributes
+		Brain*		_brain;
 
 		// Functions
 
@@ -49,6 +51,7 @@ class Dog : public Animal {
 		Dog &	operator=(Dog const & other); // Cannonical
 
 		// Getters
+		Brain*		getBrain(void) const;
 
 		// Setters
 

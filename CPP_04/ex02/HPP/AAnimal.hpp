@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 14:02:26 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/21 18:12:36 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-# define AANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include "Brain.hpp"
 
 class AAnimal {
 
@@ -31,7 +30,6 @@ class AAnimal {
 		
 		// Attributes
 		std::string	_type;
-		Brain*		_brain;
 		
 		// Functions
 
@@ -52,7 +50,6 @@ class AAnimal {
 
 		// Getters
 		std::string	getType(void) const;
-		Brain*		getBrain(void) const;
 
 		// Setters
 

@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/22 18:31:42 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/22 17:35:06 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "MateriaSource.hpp"
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-Ice::Ice(void) : AMateria("ice") {
+MateriaSource::MateriaSource(void) {
 	
-	std::cout << "Default Ice constructor called" << std::endl;
+	std::cout << "Default MateriaSource constructor called" << std::endl;
+	for (int i = 0; i < 4; i++) {
 
-	return;
+		this->_source[i] = NULL;
+	}
 }	// Cannonical
 
-Ice::Ice(Ice const & other) : AMateria(other) {
+MateriaSource::MateriaSource(MateriaSource const & other) {
 	
-	std::cout << "Copy Ice constructor called" << std::endl;
+	std::cout << "Copy MateriaSource constructor called" << std::endl;
 	*this = other; // Be careful to properly overload the '=' operator for this to work
 	
 	return;
 }	// Cannonical
 
-Ice::~Ice(void) {
+MateriaSource::~MateriaSource(void) {
 	
-	std::cout << "Ice Destructor called" << std::endl;
+	std::cout << "MateriaSource Destructor called" << std::endl;
+	for (int i = 0; i < 4; i++) {
 
-	return;
+		if (this->_source[i] != NULL) {
+
+			delete this->_source[i];
+		}
+	}
 }	// Cannonical
 
 /*----------------------------------------------|Constructors & Destructors|--*/
@@ -42,14 +49,29 @@ Ice::~Ice(void) {
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
-void Ice::use(ICharacter& target) {
-	
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+void	MateriaSource::learnMateria(AMateria* m) {
+
+	for (int i = 0; i < 4; i++) {
+
+		if (this->_source[i] == NULL) {
+
+			// this->_source[i] = m->clone();
+			this->_source[i] = m;
+			return;
+		}
+	}
 }
 
-Ice* Ice::clone() const {
+AMateria*	MateriaSource::createMateria(std::string const & type) {
 
-	return (new Ice());
+	for (int i = 0; i < 4; i++) {
+
+		if (this->_source[i] != NULL && this->_source[i]->getType().compare(type) == 0){
+
+			return (this->_source[i]->clone());
+		}
+	}
+	return (NULL);
 }
 
 /*----------------------------------------------|Object functions :: Public|--*/
@@ -84,12 +106,25 @@ Ice* Ice::clone() const {
 
 /*--|Operators Overload|------------------------------------------------------*/
 
-Ice &	Ice::operator=(Ice const & other) {
+MateriaSource &	MateriaSource::operator=(MateriaSource const & other) {
 	
-	std::cout << "Copy assignment Ice operator called" << std::endl;
+	std::cout << "Copy assignment MateriaSource operator called" << std::endl;
 	if (this != &other) {
 		
-		this->_type = other.getType(); // peu d'interet le type est le même pour tous les cure
+		// this->_param = rhs.getParam();
+		// ...
+		for (int i = 0; i < 4; i++) {
+
+			if (this->_source[i] != NULL) {
+
+				delete this->_source[i];
+				this->_source[i] = NULL;
+			}
+			if (other._source[i] != NULL) {
+
+				this->_source[i] = other._source[i]->clone();
+			}
+		}
 	}
 
 	return (*this);

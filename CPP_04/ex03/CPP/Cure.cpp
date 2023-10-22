@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/06 12:16:41 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/22 17:24:11 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 
 Cure::Cure(void) : AMateria("cure") {
 	
-	//std::cout << "Default Cure constructor called" << std::endl;
+	std::cout << "Default Cure constructor called" << std::endl;
 
 	return;
 }	// Cannonical
 
 Cure::Cure(Cure const & other) : AMateria(other) {
 	
-	//std::cout << "Copy Cure constructor called" << std::endl;
-	//*this = other; // Be careful to properly overload the '=' operator for this to work
+	std::cout << "Copy Cure constructor called" << std::endl;
+	*this = other; // Be careful to properly overload the '=' operator for this to work
 	
 	return;
 }	// Cannonical
 
 Cure::~Cure(void) {
 	
-	//std::cout << "Cure Destructor called" << std::endl;
+	std::cout << "Cure Destructor called" << std::endl;
 
 	return;
 }	// Cannonical
@@ -86,13 +86,12 @@ Cure* Cure::clone() const {
 
 Cure &	Cure::operator=(Cure const & other) {
 	
-	// std::cout << "Copy assignment Cure operator called" << std::endl;
-	// if (this != &other) {
+	std::cout << "Copy assignment Cure operator called" << std::endl;
+	if (this != &other) {
 		
-	// 	this->_type = other.getType(); // peu d'interet le type est le même pour tous les cure
-	// }
+		this->_type = other.getType(); // peu d'interet le type est le même pour tous les cure
+	}
 
-	(void) other;
 	return (*this);
 }	// Cannonical
 

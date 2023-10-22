@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:42:41 by nigarcia          #+#    #+#             */
-/*   Updated: 2023/10/05 13:31:40 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/21 17:33:13 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	main(void) {
 
 	std::cout << std::endl;
 
-	Dog	dog1 = Dog();
-	std::cout << "This is dog1, his type is "<< dog1.getType() << std::endl;
-	std::cout << "dog1 will make a sound : "; dog1.makeSound();
+	Dog	*dog1 = new Dog();
+	std::cout << "This is dog1, his type is "<< dog1->getType() << std::endl;
+	std::cout << "dog1 will make a sound : "; dog1->makeSound();
 
 	std::cout << std::endl;
 
@@ -52,6 +52,7 @@ int	main(void) {
 	std::cout << std::endl;
 
 	delete animal3;
+	delete dog1;
 	return (0);
 }
 

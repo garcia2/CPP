@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 13:34:14 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/21 17:53:56 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ Cat::Cat(void) {
 	
 	std::cout << "Default Cat constructor called" << std::endl;
 	this->_type = "Cat";
+	this->_brain = new Brain();
 	
 	return;
 }	// Cannonical
 
-Cat::Cat(Cat const & src) {
+Cat::Cat(Cat const & src) : Animal(src) {
 	
 	std::cout << "Copy Cat constructor called" << std::endl;
+	this->_brain = NULL;
 	*this = src; // Be careful to properly overload the '=' operator for this to work
 	
 	return;
@@ -33,6 +35,7 @@ Cat::Cat(Cat const & src) {
 Cat::~Cat(void) {
 	
 	std::cout << "Cat Destructor called" << std::endl;
+	delete this->_brain;
 	//this->Animal::~Animal();
 
 	return;
@@ -71,3 +74,14 @@ Cat &	Cat::operator=(Cat const & other) {
 }	// Cannonical
 
 /*------------------------------------------------------|Operators Overload|--*/
+
+
+
+/*--|Getters|-----------------------------------------------------------------*/
+
+Brain*	Cat::getBrain(void) const {
+
+	return (this->_brain);
+}
+
+/*-----------------------------------------------------------------|Getters|--*/

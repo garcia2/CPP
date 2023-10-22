@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+         #
+#    By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/23 18:46:21 by ael-khni          #+#    #+#              #
-#    Updated: 2023/10/18 18:17:22 by nigarcia         ###   ########.fr        #
+#    Updated: 2023/10/22 17:17:40 by nicolas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= animals
+NAME		= materia
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -21,8 +21,12 @@ INCLUDE		= HPP/
 OBJDIR = .objFiles
 
 
-FILES		=	main			\
-				CPP/AMateria	\
+FILES		=	main				\
+				CPP/AMateria		\
+				CPP/Character		\
+				CPP/Cure			\
+				CPP/Ice				\
+				CPP/MateriaSource	\
 
 
 SRC			= $(FILES:=.cpp)

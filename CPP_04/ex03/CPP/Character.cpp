@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/18 18:35:44 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/22 18:21:50 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@
 Character::Character(void) {
 	
 	std::cout << "Default Character constructor called" << std::endl;
-}	// Cannonical
+	_initInventory();
+}	// Cannonical (Unused)
+
+Character::Character(const std::string& name) {
+
+	std::cout << "Parametric Character constructor called" << std::endl;
+	this->_name = name;
+	_initInventory();
+}
 
 Character::Character(Character const & other) {
 	
@@ -54,14 +62,14 @@ void Character::equip(AMateria* m) {
 
 void Character::unequip(int idx) {
 
-	if (i > 0 || i < 3)
+	if (idx < 0 || idx > 3)
 		return;
 	this->_inventory[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target) {
 
-	if (i > 0 || i < 3)
+	if (idx < 0 || idx > 3)
 		return;
 	
 	if (this->_inventory[idx] != NULL){
@@ -79,6 +87,14 @@ void Character::use(int idx, ICharacter& target) {
 
 
 /*--|Object functions :: Private|---------------------------------------------*/
+
+void	Character::_initInventory(void) {
+
+	for (int i = 0; i < 4; i++) {
+
+		this->_inventory[i] = NULL;
+	}
+}
 
 /*---------------------------------------------|Object functions :: Private|--*/
 
@@ -115,7 +131,7 @@ Character &	Character::operator=(Character const & other) {
 			if (this->_inventory[i] != NULL)
 				delete this->_inventory[i];
 			if (other._inventory[i] != NULL)
-				this->_inventory[i] = other._inventory[i].clone();
+				this->_inventory[i] = other._inventory[i]->clone();
 			
 		}
 	}
@@ -131,7 +147,7 @@ Character &	Character::operator=(Character const & other) {
 
 std::string const & Character::getName() const {
 
-	return (this->_name)
+	return (this->_name);
 }
 
 /*-----------------------------------------------------------------|Getters|--*/

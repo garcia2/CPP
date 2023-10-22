@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 13:30:07 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/21 17:10:10 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat(void) {
 	return;
 }	// Cannonical
 
-Cat::Cat(Cat const & src) {
+Cat::Cat(Cat const & src) : Animal(src) {
 	
 	std::cout << "Copy Cat constructor called" << std::endl;
 	*this = src; // Be careful to properly overload the '=' operator for this to work

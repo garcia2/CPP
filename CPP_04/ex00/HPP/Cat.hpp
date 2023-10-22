@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 13:15:16 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/21 17:15:05 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Cat : public Animal {
 		// Constructors & Destructors
 		Cat(void);				// Cannonical
 		Cat(Cat const & other);	// Cannonical
-		~Cat(void);				// Cannonical
+		virtual	~Cat(void);				// Cannonical
 
 		// Functions
 		virtual void	makeSound(void) const;
