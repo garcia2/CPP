@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:42:41 by nigarcia          #+#    #+#             */
-/*   Updated: 2023/10/21 18:16:37 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/25 11:45:58 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,19 @@ void	test1(void) {
 
 	// std::cout << std::endl << "------------------" << std::endl << std::endl;
 
+	// AAnimal	cat1 = Cat();	std::cout << std::endl;
+	// AAnimal	dog1 = Dog();	std::cout << std::endl;
 	Cat	cat1 = Cat();	std::cout << std::endl;
 	std::cout << "This is cat1, his type is "<< cat1.getType() << std::endl;
 	std::cout << "cat1 will make a sound : "; cat1.makeSound();
 
-
 	std::cout << std::endl << "------------------" << std::endl << std::endl;
 
-	// AAnimal Aanimal4 = Cat();	std::cout << std::endl;
-	// std::cout << "This is Aanimal4, his type is "<< Aanimal4.getType() << std::endl;
-	// std::cout << "AAnimal4 will make a sound : "; Aanimal4.makeSound();
-	// std::cout << std::endl << "------------------" << std::endl << std::endl;
+	AAnimal	*dog1 = new Dog();	std::cout << std::endl;
+	std::cout << "This is dog1, his type is "<< dog1->getType() << std::endl;
+	std::cout << "dog1 will make a sound : "; dog1->makeSound();
 	
+	delete dog1;
 	// delete Aanimal3;
 }
 

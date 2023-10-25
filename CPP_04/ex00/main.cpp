@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:42:41 by nigarcia          #+#    #+#             */
-/*   Updated: 2023/10/21 17:33:13 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/25 11:28:46 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int	main(void) {
 
@@ -32,41 +34,36 @@ int	main(void) {
 
 	std::cout << std::endl;
 
-	Dog	*dog1 = new Dog();
+	Animal	*dog1 = new Dog();
 	std::cout << "This is dog1, his type is "<< dog1->getType() << std::endl;
 	std::cout << "dog1 will make a sound : "; dog1->makeSound();
 
 	std::cout << std::endl;
 
-	Cat	cat1 = Cat();
+	Animal	cat1 = Cat();
 	std::cout << "This is cat1, his type is "<< cat1.getType() << std::endl;
 	std::cout << "cat1 will make a sound : "; cat1.makeSound();
 
+	
+	std::cout << std::endl;
+
+	const WrongAnimal* wrongAnimal1 = new WrongAnimal();	std::cout << std::endl;
+	const WrongAnimal* wrongCat1 = new WrongCat();				std::cout << std::endl;
+	
+	std::cout << "This is wrongAnimal1, his type is "<< wrongAnimal1->getType() << std::endl;
+	std::cout << "This is wrongCat1,    his type is "<< wrongCat1->getType() << std::endl;
 
 	std::cout << std::endl;
 
-	Animal animal4 = Cat();
-	std::cout << "This is animal4, his type is "<< animal4.getType() << std::endl;
-	std::cout << "Animal4 will make a sound : "; animal4.makeSound();
-	
+	std::cout << "wrongAnimal1 will make a sound : "; wrongAnimal1->makeSound();
+	std::cout << "wrongCat1 will make a sound    : "; wrongCat1->makeSound();
+
 	std::cout << std::endl;
 
 	delete animal3;
 	delete dog1;
+	delete wrongAnimal1;
+	delete wrongCat1;
+
 	return (0);
 }
-
-// #include <iostream>
-// #include "WrongAnimal.hpp"
-// #include "WrongCat.hpp"
-
-// int main()
-// {
-// 	const WrongAnimal* meta = new WrongAnimal();
-// 	const WrongAnimal* i = new WrongCat();
-	
-// 	std::cout << i->getType() << " " << std::endl;
-	
-// 	i->makeSound(); //will output the cat sound!
-// 	meta->makeSound();
-// }
