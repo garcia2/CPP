@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClassTemplate.hpp                                  :+:      :+:    :+:   */
+/*   PresidentialPardonForm copy 2.hpp                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/17 19:08:51 by nicolas          ###   ########.fr       */
+/*   Created: 2024/01/17 22:53:27 by nicolas           #+#    #+#             */
+/*   Updated: 2024/01/17 23:44:34 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASSTEMPLATE_HPP
-# define CLASSTEMPLATE_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+# define PRESIDENTIALPARDONFORM_HPP
 
 #include <iostream>
-//#include <string>
+#include <string>
+#include "AForm.hpp"
 
-class ClassTemplate {
+class Bureaucrat;
+
+class PresidentialPardonForm : public AForm {
 
 	private:
 		
 		// Attributes
+		const std::string	_target;
 
 		// Functions
 
 		// Hidden Constructor
+		PresidentialPardonForm(void);						// Cannonical
 
 	protected:
 		
@@ -37,16 +42,18 @@ class ClassTemplate {
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(ClassTemplate const & other);	// Cannonical
-		ClassTemplate(void);						// Cannonical
-		virtual ~ClassTemplate(void);				// Cannonical
+		PresidentialPardonForm(const std::string & target);
+		PresidentialPardonForm(PresidentialPardonForm const & other);	// Cannonical
+		virtual ~PresidentialPardonForm(void);						// Cannonical
 
 		// Functions
+		void	execute(const Bureaucrat & executor) const;
 
 		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & other); // Cannonical
+		PresidentialPardonForm &	operator=(PresidentialPardonForm const & other); // Cannonical
 
 		// Getters
+		const std::string getTarget(void) const;
 
 		// Setters
 

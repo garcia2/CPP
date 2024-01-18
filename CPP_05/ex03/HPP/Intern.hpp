@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClassTemplate.hpp                                  :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/17 19:08:51 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/18 03:10:41 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASSTEMPLATE_HPP
-# define CLASSTEMPLATE_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 #include <iostream>
-//#include <string>
+#include <string>
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-class ClassTemplate {
+class Intern {
 
 	private:
 		
 		// Attributes
+		static AForm *				(Intern::*formFList[])(const std::string);		
+		static int const			nbForms;
+		static std::string const	formSList[];
 
 		// Functions
+		AForm * createPresidentialPardonForm(const std::string target);
+		AForm * createRobotomyRequestForm(const std::string target);
+		AForm * createShrubberyCreationForm(const std::string target);
 
 		// Hidden Constructor
 
@@ -37,14 +47,15 @@ class ClassTemplate {
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(ClassTemplate const & other);	// Cannonical
-		ClassTemplate(void);						// Cannonical
-		virtual ~ClassTemplate(void);				// Cannonical
+		Intern(Intern const & other);	// Cannonical
+		Intern(void);						// Cannonical
+		virtual ~Intern(void);				// Cannonical
 
 		// Functions
-
+		AForm * makeForm(const std::string formType, const std::string target);
+		void test(void);
 		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & other); // Cannonical
+		Intern &	operator=(Intern const & other); // Cannonical
 
 		// Getters
 

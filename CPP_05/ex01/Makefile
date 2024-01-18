@@ -6,25 +6,27 @@
 #    By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/23 18:46:21 by ael-khni          #+#    #+#              #
-#    Updated: 2024/01/05 09:47:42 by nicolas          ###   ########.fr        #
+#    Updated: 2024/01/17 21:42:31 by nicolas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= megaphone
+NAME		= bureaucrat
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
-INCLUDE		= ./
+INCLUDE		= HPP/
 
 OBJDIR = .objFiles
 
 
-FILES		=	megaphone
+FILES		=	main				\
+				CPP/Bureaucrat		\
+				CPP/Form			\
 
 
-
+SRC			= $(FILES:=.cpp)
 
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 
@@ -61,3 +63,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
