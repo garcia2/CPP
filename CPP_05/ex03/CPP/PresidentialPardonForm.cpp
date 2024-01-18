@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 01:54:45 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:26:45 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string & target) : AForm("PresidentialPardonForm", 25, 5), _target(target) {
+PresidentialPardonForm::PresidentialPardonForm(const std::string & target) :
+	AForm("PresidentialPardonForm", 25, 5),
+	_target(target) {
 	
 	std::cout << "Parametric PresidentialPardonForm constructor called" << std::endl;
 }	// Cannonical
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & other) : AForm(other), _target(other._target) {
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & other) :
+	AForm(other),
+	_target(other._target) {
 	
 	std::cout << "Copy PresidentialPardonForm constructor called" << std::endl;
 }	// Cannonical

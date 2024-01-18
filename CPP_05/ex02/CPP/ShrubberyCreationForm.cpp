@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 01:18:31 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:19:17 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string & target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string & target) :
+	AForm("ShrubberyCreationForm", 145, 137),
+	_target(target) {
 	
 	std::cout << "Parametric ShrubberyCreationForm constructor called" << std::endl;
 }	// Cannonical
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & other) : AForm(other), _target(other._target) {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & other) :
+	AForm(other),
+	_target(other._target) {
 	
 	std::cout << "Copy ShrubberyCreationForm constructor called" << std::endl;
 }	// Cannonical

@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 03:26:56 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:29:20 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ AForm *	Intern::makeForm(const std::string formType, const std::string target) {
 	for (int i = 0; i < Intern::nbForms; i++)
 	{
 		if (formType.compare(Intern::formSList[i]) == 0) {
-
+			
+			std::cout << "Intern creates \"" << formSList[i] << "\" form." << std::endl;
 			return ( (this->*Intern::formFList[i])(target) );
 		}
 	}

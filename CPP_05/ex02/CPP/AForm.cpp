@@ -14,7 +14,10 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-AForm::AForm(const std::string & name, int canSignGrade, int canExecGrade) : _name(name), _canSignGrade(canSignGrade), _canExecGrade(canExecGrade) {
+AForm::AForm(const std::string & name, int canSignGrade, int canExecGrade) :
+	_name(name),
+	_canSignGrade(canSignGrade),
+	_canExecGrade(canExecGrade) {
 
 	std::cout << "Parametric AForm constructor called" << std::endl;
 	
@@ -25,7 +28,10 @@ AForm::AForm(const std::string & name, int canSignGrade, int canExecGrade) : _na
 		throw GradeTooLowException();
 }
 
-AForm::AForm(AForm const & other) : _name(other._name), _canSignGrade(other._canSignGrade), _canExecGrade(other._canExecGrade) {
+AForm::AForm(AForm const & other) : 
+	_name(other._name),
+	_canSignGrade(other._canSignGrade),
+	_canExecGrade(other._canExecGrade) {
 	
 	std::cout << "Copy AForm constructor called" << std::endl;
 	*this = other;

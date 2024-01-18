@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 01:54:03 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:21:18 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string & target) : AForm("RobotomyRequestForm", 72, 45), _target(target) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string & target) :
+	AForm("RobotomyRequestForm", 72, 45),
+	_target(target) {
 	
 	std::cout << "Parametric RobotomyRequestForm constructor called" << std::endl;
 }	// Cannonical
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & other) : AForm(other), _target(other._target) {
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & other) :
+	AForm(other),
+	_target(other._target) {
 	
 	std::cout << "Copy RobotomyRequestForm constructor called" << std::endl;
 }	// Cannonical

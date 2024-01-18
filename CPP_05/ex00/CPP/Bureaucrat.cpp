@@ -14,7 +14,8 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-Bureaucrat::Bureaucrat(const std::string & name, int grade) : _name(name) {
+Bureaucrat::Bureaucrat(const std::string & name, int grade) :
+	_name(name) {
 
 	std::cout << "Parametric Bureaucrat constructor called" << std::endl;
 	if (grade < 1)
@@ -24,7 +25,9 @@ Bureaucrat::Bureaucrat(const std::string & name, int grade) : _name(name) {
 	this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const & other) : _name(other._name), _grade(other._grade) {
+Bureaucrat::Bureaucrat(Bureaucrat const & other) :
+	_name(other._name),
+	_grade(other._grade) {
 	
 	std::cout << "Copy Bureaucrat constructor called" << std::endl;
 }	// Cannonical

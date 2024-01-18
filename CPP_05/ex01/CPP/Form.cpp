@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:10:08 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/17 23:38:09 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/18 14:15:43 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
-Form::Form(const std::string & name, int canSignGrade, int canExecGrade) : _name(name), _canSignGrade(canSignGrade), _canExecGrade(canExecGrade) {
+Form::Form(const std::string & name, int canSignGrade, int canExecGrade) :
+	_name(name),
+	_canSignGrade(canSignGrade),
+	_canExecGrade(canExecGrade) {
 
 	std::cout << "Parametric Form constructor called" << std::endl;
 	
@@ -25,7 +28,10 @@ Form::Form(const std::string & name, int canSignGrade, int canExecGrade) : _name
 		throw GradeTooLowException();
 }
 
-Form::Form(Form const & other) : _name(other._name), _canSignGrade(other._canSignGrade), _canExecGrade(other._canExecGrade) {
+Form::Form(Form const & other) :
+	_name(other._name),
+	_canSignGrade(other._canSignGrade),
+	_canExecGrade(other._canExecGrade) {
 	
 	std::cout << "Copy Form constructor called" << std::endl;
 	*this = other;
