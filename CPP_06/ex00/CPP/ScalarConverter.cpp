@@ -22,17 +22,17 @@ void	ScalarConverter::convert(const std::string & input) {
 		char c = ScalarConverter::strToChar(input);
 		ScalarConverter::convertChar(c);
 	}
-	if (type == ScalarConverter::FLOAT){
+	else if (type == ScalarConverter::FLOAT){
 
 		float number = ScalarConverter::strToFloat(input);
 		ScalarConverter::convertFloat(number);
 	}
-	if (type == ScalarConverter::DOUBLE) {
+	else if (type == ScalarConverter::DOUBLE) {
 
 		double number = ScalarConverter::strToDouble(input);
 		ScalarConverter::convertDouble(number);
 	}
-	if (type == ScalarConverter::INT) {
+	else if (type == ScalarConverter::INT) {
 
 		int number = ScalarConverter::strToInt(input);
 		ScalarConverter::convertInt(number);
@@ -80,7 +80,7 @@ void	ScalarConverter::printFloat(float number, bool impossible) {
 		std::cout << "impossible" << std::endl;
 	else
 	{
-		if (isinff(number) && number > 0)
+		if (std::isinff(number) && number > 0)
 			std::cout << "+";
 		std::cout << number << (ScalarConverter::isFloatRound(number) ? ".0" : "") << "f" << std::endl;
 	}

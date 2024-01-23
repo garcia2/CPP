@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClassTemplate.hpp                                  :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/23 16:44:48 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 18:15:46 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASSTEMPLATE_HPP
-# define CLASSTEMPLATE_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 //#include <string>
 
-class ClassTemplate {
+class Span {
 
 	private:
 		
 		// Attributes
+		unsigned int		_maxSize;
+		std::vector<int>	_numbers;
 
 		// Functions
 
 		// Hidden Constructor
+		Span(void);					// Cannonical
 
 	protected:
 		
@@ -37,16 +42,21 @@ class ClassTemplate {
 	public:
 
 		// Constructors & Destructors
-		ClassTemplate(void);						// Cannonical
-		ClassTemplate(ClassTemplate const & other);	// Cannonical
-		virtual ~ClassTemplate(void);				// Cannonical
+		Span(unsigned int N);
+		Span(Span const & other);	// Cannonical
+		virtual ~Span(void);		// Cannonical
 
 		// Functions
+		void			toPrint(const std::string & name) const;
+		void			addNumber(int number);
+		unsigned int	shortestSpan(void) const;
+		unsigned int	longestSpan(void) const;
 
 		// Operators overload
-		ClassTemplate &	operator=(ClassTemplate const & other); // Cannonical
+		Span &	operator=(Span const & other); // Cannonical
 
 		// Getters
+		size_t	getSize(void) const;
 
 		// Setters
 

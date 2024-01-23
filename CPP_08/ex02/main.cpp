@@ -6,30 +6,41 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/21 10:54:28 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 19:18:30 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "MutantStack.hpp"
 
-int main( void )
-{
-	Bureaucrat	boss("LE BOSS", 1);
-	Bureaucrat	looser("LE LOOSER", 3);
-	Form		superContract("The super contract", 2, 1);
-	std::cout << std::endl;
 
-	std::cout << boss << std::endl;
-	std::cout << looser << std::endl;
-	std::cout << superContract << std::endl;
-	std::cout << std::endl;
+int	main(void) {
 
-	looser.signForm(superContract);
-	boss.signForm(superContract);
+	MutantStack<int> mstack;
+
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
 	
-	std::cout << std::endl;
-    return (0);
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	
+	while (it != ite){
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+	
+	return (0);
 }
