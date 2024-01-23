@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 03:10:41 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:04:41 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ class Intern {
 	private:
 		
 		// Attributes
-		static AForm *				(Intern::*formFList[])(const std::string);		
+		static AForm *				(Intern::*formFList[])(const std::string &);		
 		static int const			nbForms;
 		static std::string const	formSList[];
 
 		// Functions
-		AForm * createPresidentialPardonForm(const std::string target);
-		AForm * createRobotomyRequestForm(const std::string target);
-		AForm * createShrubberyCreationForm(const std::string target);
+		AForm * createPresidentialPardonForm(const std::string & target);
+		AForm * createRobotomyRequestForm(const std::string & target);
+		AForm * createShrubberyCreationForm(const std::string & target);
 
 		// Hidden Constructor
 
@@ -52,8 +52,8 @@ class Intern {
 		virtual ~Intern(void);				// Cannonical
 
 		// Functions
-		AForm * makeForm(const std::string formType, const std::string target);
-		void test(void);
+		AForm *	makeForm(const std::string formType, const std::string & target);
+		
 		// Operators overload
 		Intern &	operator=(Intern const & other); // Cannonical
 

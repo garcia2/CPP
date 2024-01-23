@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:10:08 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 14:15:43 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 19:48:49 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ std::ostream &	operator<<(std::ostream & o, Form const & rhs) {
 
 /*--|Getters|-----------------------------------------------------------------*/
 
-const std::string Form::getName(void) const {
+const std::string &	Form::getName(void) const {
 
 	return (this->_name);
 }

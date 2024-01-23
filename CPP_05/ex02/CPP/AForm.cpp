@@ -87,7 +87,7 @@ std::ostream &	operator<<(std::ostream & o, AForm const & rhs) {
 
 /*--|Getters|-----------------------------------------------------------------*/
 
-const std::string AForm::getName(void) const {
+const std::string &	AForm::getName(void) const {
 
 	return (this->_name);
 }

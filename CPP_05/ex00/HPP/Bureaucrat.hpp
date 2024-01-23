@@ -21,7 +21,7 @@ class Bureaucrat {
 	private:
 		
 		// Attributes
-		const std::string	_name;
+		const std::string 	_name;
 		int					_grade;
 
 		// Functions
@@ -52,7 +52,7 @@ class Bureaucrat {
 		Bureaucrat &	operator=(Bureaucrat const & other); // Cannonical
 
 		// Getters
-		const std::string	getName(void) const;
+		const std::string &	getName(void) const;
 		int					getGrade(void) const;
 
 		// Setters

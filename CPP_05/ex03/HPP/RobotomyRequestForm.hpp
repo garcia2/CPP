@@ -55,7 +55,7 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm &	operator=(RobotomyRequestForm const & other); // Cannonical
 
 		// Getters
-		const std::string getTarget(void) const;
+		const std::string &	getTarget(void) const;
 
 		// Setters
 

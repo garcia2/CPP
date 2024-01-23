@@ -102,7 +102,7 @@ std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs) {
 
 /*--|Getters|-----------------------------------------------------------------*/
 
-const std::string Bureaucrat::getName(void) const {
+const std::string &	Bureaucrat::getName(void) const {
 
 	return (this->_name);
 }

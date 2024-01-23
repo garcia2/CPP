@@ -6,11 +6,12 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 14:21:18 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 19:58:57 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
@@ -34,6 +35,8 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {
 }	// Cannonical
 
 /*----------------------------------------------|Constructors & Destructors|--*/
+
+
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
@@ -60,6 +63,8 @@ void	RobotomyRequestForm::execute(const Bureaucrat & executor) const {
 
 /*----------------------------------------------|Object functions :: Public|--*/
 
+
+
 /*--|Operators Overload|------------------------------------------------------*/
 
 RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const & other) {
@@ -76,9 +81,11 @@ RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const &
 
 /*------------------------------------------------------|Operators Overload|--*/
 
+
+
 /*--|Getters|-----------------------------------------------------------------*/
 
-const std::string RobotomyRequestForm::getTarget(void) const {
+const std::string &	RobotomyRequestForm::getTarget(void) const {
 
 	return (this->_target);
 }

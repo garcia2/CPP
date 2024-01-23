@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 22:53:27 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 00:59:52 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 19:58:01 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm &	operator=(ShrubberyCreationForm const & other); // Cannonical
 
 		// Getters
-		const std::string getTarget(void) const;
+		const std::string &	getTarget(void) const;
 
 		// Setters
 

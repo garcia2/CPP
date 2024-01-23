@@ -53,7 +53,7 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm &	operator=(PresidentialPardonForm const & other); // Cannonical
 
 		// Getters
-		const std::string getTarget(void) const;
+		const std::string &	getTarget(void) const;
 
 		// Setters
 

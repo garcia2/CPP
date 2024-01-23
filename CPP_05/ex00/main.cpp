@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/17 20:00:51 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:10:22 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ int main( void )
 	
 	Bureaucrat boss("LE BOSS", 1);
 	Bureaucrat looser("LE LOOSER", 150);
-	try 
-	{
+	try {
 		Bureaucrat fraude("LA FRAUDE", 151);
 	}
-	catch (Bureaucrat::GradeTooHighException & e)
-	{
+	catch (Bureaucrat::GradeTooHighException & e) {
 		
 		std::cout << "EXCEPTION: '" << e.what() << "'" << std::endl;
 	}
@@ -33,6 +31,11 @@ int main( void )
 		
 		std::cout << "EXCEPTION: '" << e.what() << "'" << std::endl;
 	}
+
+	std::cout << std::endl;
+
+	/* ************************************************************************** */
+	
     try {
 
         std::cout << std::endl << boss << std::endl;
@@ -46,10 +49,15 @@ int main( void )
         
 		std::cout << std::endl << boss << std::endl;
 		boss.decrementGrade();
-    } catch (Bureaucrat::GradeTooHighException & e) {
+    }
+	catch (Bureaucrat::GradeTooHighException & e) {
         
 		std::cout << "EXCEPTION: '" << e.what() << "'" << std::endl;
     }
+
+	std::cout << std::endl;
+
+	/* ************************************************************************** */
 
 	try {
 
@@ -64,10 +72,15 @@ int main( void )
 
 		std::cout << std::endl << looser << std::endl;
 		looser.incrementGrade();
-    } catch (Bureaucrat::GradeTooLowException & e) {
+    }
+	catch (Bureaucrat::GradeTooLowException & e) {
 		
         std::cout << "EXCEPTION: '" << e.what() << "'" << std::endl;
     }
+	
 	std::cout << std::endl;
+
+	/* ************************************************************************** */
+	
     return (0);
 }

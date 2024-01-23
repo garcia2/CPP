@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/21 10:54:25 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 19:52:24 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ class Form {
 		Form &	operator=(Form const & other); // Cannonical
 
 		// Getters
-		std::string const	getName(void) const;
+		const std::string &	getName(void) const;
 		int					getCanExecGrade(void) const;
 		int					getCanSignGrade(void) const;
 		

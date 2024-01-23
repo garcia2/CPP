@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 14:19:17 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:19:50 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 
 /*----------------------------------------------|Constructors & Destructors|--*/
 
+
+
 /*--|Object functions :: Public|----------------------------------------------*/
 
 void	ShrubberyCreationForm::execute(const Bureaucrat & executor) const {
+	
+	std::cout << executor.getName() << " try to execute form '" << this->getName() << "'" << std::endl;
 	
 	if (this->_signed == false)
 		throw AForm::FormNotSignedException();
@@ -64,6 +68,8 @@ void	ShrubberyCreationForm::execute(const Bureaucrat & executor) const {
 
 /*----------------------------------------------|Object functions :: Public|--*/
 
+
+
 /*--|Operators Overload|------------------------------------------------------*/
 
 ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & other) {
@@ -80,9 +86,11 @@ ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 
 /*------------------------------------------------------|Operators Overload|--*/
 
+
+
 /*--|Getters|-----------------------------------------------------------------*/
 
-const std::string ShrubberyCreationForm::getTarget(void) const {
+const std::string &	ShrubberyCreationForm::getTarget(void) const {
 
 	return (this->_target);
 }

@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:10:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 14:20:11 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 19:55:53 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs) {
 
 /*--|Getters|-----------------------------------------------------------------*/
 
-const std::string Bureaucrat::getName(void) const {
+const std::string &	Bureaucrat::getName(void) const {
 
 	return (this->_name);
 }

@@ -6,11 +6,12 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 14:20:40 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:00:09 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+
 
 /*--|Constructors & Destructors|----------------------------------------------*/
 
@@ -35,6 +36,8 @@ PresidentialPardonForm::~PresidentialPardonForm(void) {
 
 /*----------------------------------------------|Constructors & Destructors|--*/
 
+
+
 /*--|Object functions :: Public|----------------------------------------------*/
 
 void	PresidentialPardonForm::execute(const Bureaucrat & executor) const {
@@ -50,6 +53,8 @@ void	PresidentialPardonForm::execute(const Bureaucrat & executor) const {
 }
 
 /*----------------------------------------------|Object functions :: Public|--*/
+
+
 
 /*--|Operators Overload|------------------------------------------------------*/
 
@@ -67,9 +72,11 @@ PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonFor
 
 /*------------------------------------------------------|Operators Overload|--*/
 
+
+
 /*--|Getters|-----------------------------------------------------------------*/
 
-const std::string PresidentialPardonForm::getTarget(void) const {
+const std::string &	PresidentialPardonForm::getTarget(void) const {
 
 	return (this->_target);
 }

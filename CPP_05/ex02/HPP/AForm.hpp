@@ -56,7 +56,7 @@ class AForm {
 		AForm &	operator=(AForm const & other); // Cannonical
 
 		// Getters
-		std::string const	getName(void) const;
+		const std::string &	getName(void) const;
 		int					getCanExecGrade(void) const;
 		int					getCanSignGrade(void) const;
 		virtual void        execute(const Bureaucrat & executor) const = 0;

@@ -6,7 +6,7 @@
 /*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/18 14:29:20 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/23 20:05:17 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Intern::~Intern(void) {
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
-AForm *	Intern::makeForm(const std::string formType, const std::string target) {
+AForm *	Intern::makeForm(const std::string formType, const std::string & target) {
 	
 	for (int i = 0; i < Intern::nbForms; i++)
 	{
@@ -56,17 +56,17 @@ AForm *	Intern::makeForm(const std::string formType, const std::string target) {
 
 /*--|Object functions :: Private|---------------------------------------------*/
 
-AForm * Intern::createPresidentialPardonForm(const std::string target) {
+AForm * Intern::createPresidentialPardonForm(const std::string & target) {
 
 	return new PresidentialPardonForm(target);
 }
 
-AForm * Intern::createRobotomyRequestForm(const std::string target) {
+AForm * Intern::createRobotomyRequestForm(const std::string & target) {
 	
 	return new RobotomyRequestForm(target);
 }
 
-AForm * Intern::createShrubberyCreationForm(const std::string target) {
+AForm * Intern::createShrubberyCreationForm(const std::string & target) {
 
 	return new ShrubberyCreationForm(target);
 }
@@ -97,7 +97,7 @@ Intern &	Intern::operator=(Intern const & other) {
 
 int	const	Intern::nbForms = 3;
 
-AForm *	(Intern::*Intern::formFList[])(const std::string) = {
+AForm *	(Intern::*Intern::formFList[])(const std::string &) = {
 	
 	&Intern::createShrubberyCreationForm,
 	&Intern::createRobotomyRequestForm,
