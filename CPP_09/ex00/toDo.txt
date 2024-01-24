@@ -1,0 +1,2 @@
+=> importer le CSV dans une map
+	(isValidMap ne fonctionne pas avec 2022-03-2z2)
