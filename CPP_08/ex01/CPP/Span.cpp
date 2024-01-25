@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:24:18 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/23 18:16:16 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 18:27:59 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Span::Span(unsigned int N) : _maxSize(N) {
 	this->_numbers.reserve(N);
 }
 
-Span::Span(Span const & other) : _maxSize(other._maxSize), _numbers(other._numbers){ }	// Cannonical
+Span::Span(Span const & other) : _maxSize(other._maxSize), _numbers(other._numbers) { }	// Cannonical
 
 Span::~Span(void) { }	// Cannonical
 
@@ -29,7 +29,7 @@ Span::~Span(void) { }	// Cannonical
 
 /*--|Object functions :: Public|----------------------------------------------*/
 
-void	Span::toPrint(const std::string & name) const{
+void	Span::toPrint(const std::string & name) const {
 
 	std::vector<int>::const_iterator	it;
 	std::vector<int>::const_iterator	ite = this->_numbers.end();
@@ -46,7 +46,7 @@ void	Span::toPrint(const std::string & name) const{
 }
 
 
-void	Span::addNumber(int number){
+void	Span::addNumber(int number) {
 
 	if (this->_numbers.size() == this->_maxSize)
 		throw std::runtime_error("cannot add number, max_size reached");
@@ -55,7 +55,7 @@ void	Span::addNumber(int number){
 }
 
 
-unsigned int	Span::shortestSpan(void) const{
+unsigned int	Span::shortestSpan(void) const {
 
 	if (this->_numbers.size() <= 1)
 		throw std::runtime_error("cannot find shortest span, needs two or more numbers");
@@ -65,7 +65,7 @@ unsigned int	Span::shortestSpan(void) const{
 
 	int shortestSpan = sortedNumbers[1] - sortedNumbers[0];
 
-	for (size_t i = 2; i < sortedNumbers.size(); i++){
+	for (size_t i = 2; i < sortedNumbers.size(); i++) {
 
 		shortestSpan = std::min(shortestSpan, sortedNumbers[i] - sortedNumbers[i - 1]);
 	}
@@ -74,7 +74,7 @@ unsigned int	Span::shortestSpan(void) const{
 }
 
 
-unsigned int	Span::longestSpan(void) const{
+unsigned int	Span::longestSpan(void) const {
 
 	if (this->_numbers.size() <= 1)
 		throw std::runtime_error("cannot find longest span, needs two or more numbers");
@@ -90,7 +90,7 @@ unsigned int	Span::longestSpan(void) const{
 
 /*--|Getters|-----------------------------------------------------------------*/
 
-size_t	Span::getSize(void) const{
+size_t	Span::getSize(void) const {
 
 	return (this->_numbers.size());
 }

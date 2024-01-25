@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/23 18:19:50 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 18:28:25 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,21 @@ int main(void) {
 	try {
 		span.addNumber(0);
 	} 
-	catch (std::exception & e){
+	catch (std::exception & e) {
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 
 	try {
 		sp2.addNumber(0);
 	} 
-	catch (std::exception & e){
+	catch (std::exception & e) {
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 
 	try {
 		sp3.addNumber(0);
 	} 
-	catch (std::exception & e){
+	catch (std::exception & e) {
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 
@@ -83,14 +83,14 @@ int main(void) {
 	try {
 		sp5.shortestSpan();
 	} 
-	catch (std::exception & e){
+	catch (std::exception & e) {
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 
 	try {
 		sp5.longestSpan();
 	} 
-	catch (std::exception & e){
+	catch (std::exception & e) {
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 	

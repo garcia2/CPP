@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/23 20:10:22 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 09:03:22 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
-int main( void )
-{
+int main( void ) {
 	
 	Bureaucrat boss("LE BOSS", 1);
 	Bureaucrat looser("LE LOOSER", 150);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:38:58 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/23 15:52:50 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 18:38:27 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-//#include <string>
+
 
 template <typename T>
-typename T::iterator easyfind(T & container, int value){
+typename T::iterator easyfind(T & container, int value) {
 
 	typename T::iterator it = std::find(container.begin(), container.end(), value);
 

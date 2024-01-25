@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/23 19:32:45 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 18:29:28 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stack>
 
 template <typename T>
-class MutantStack : public std::stack<T>{
+class MutantStack : public std::stack<T> {
 
 	public:
 
@@ -42,9 +42,9 @@ class MutantStack : public std::stack<T>{
 		}
 
 		// Operators overload
-		MutantStack &	operator=(MutantStack const & other){
+		MutantStack &	operator=(MutantStack const & other) {
 
-			if (this != &other){
+			if (this != &other) {
 
 				std::stack<T>::operator=(other);
 			}
