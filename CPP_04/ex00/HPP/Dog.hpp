@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/05 13:15:37 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/25 12:11:11 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Dog : public Animal {
 		virtual ~Dog(void);				// Cannonical
 
 		// Functions
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 
 		// Operators overload
 		Dog &	operator=(Dog const & other); // Cannonical

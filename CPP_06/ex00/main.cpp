@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/19 14:40:59 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 12:38:31 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(int argc, char **argv) {
 		std::cerr << "convert: error: you need one and only one argument" << std::endl;
 		return (1);
 	}
+
     const std::string & str(argv[1]);
     try {
 
@@ -35,10 +36,10 @@ int main(int argc, char **argv) {
 		return (2);
 	}
 	
-	std::cout << "----------" << std::endl << std::endl;
-	ScalarConverter::convert("0"); std::cout << "----------" << std::endl << std::endl;
-	ScalarConverter::convert("nan"); std::cout << "----------" << std::endl << std::endl;
-    ScalarConverter::convert("42.0f"); std::cout << "----------" << std::endl << std::endl;
+	// std::cout << "----------" << std::endl << std::endl;
+	// ScalarConverter::convert("0"); std::cout << "----------" << std::endl << std::endl;
+	// ScalarConverter::convert("nan"); std::cout << "----------" << std::endl << std::endl;
+    // ScalarConverter::convert("42.0f"); std::cout << "----------" << std::endl << std::endl;
 	
 	return (0);
 }

@@ -14,7 +14,6 @@
 # define ARRAY_HPP
 
 #include <iostream>
-//#include <string>
 
 template <typename T>
 class Array {
@@ -22,7 +21,7 @@ class Array {
 	private:
 		
 		// Attributes
-		unsigned int	_size;
+		int	_size;
 		T *				_array;
 
 		// Functions
@@ -40,25 +39,29 @@ class Array {
 	public:
 
 		// Constructors & Destructors
-		Array(void) : _size(0), _array(NULL){ }
+		Array(void) : _size(0), _array(NULL) { }
 
 		Array(const Array & other) : _size(other._size), _array(new T[other._size]) {
 			
-			for (unsigned int i = 0; i < this->_size; ++i) {
+			for (int i = 0; i < this->_size; ++i) {
 				
 				this->_array[i] = other._array[i];
 			}
 		}	// Cannonical
 		
-		Array(unsigned int size) : _size(size), _array(new T[size]){
+		Array(int size) : _size(size) {
 
-			for (unsigned int i = 0; i < size; i++) {
+
+			if (size < 0)
+				throw std::invalid_argument("Size must be positive");
+			
+			_array = new T[size];
+
+			for (int i = 0; i < size; i++) {
 
 				this->_array[i] = T();
 			}
 		}
-
-		// Array(unsigned int size) : _array(new T[size]), _size(size){ }
 
 		virtual ~Array(void) {
 
@@ -67,7 +70,7 @@ class Array {
 
 
 		// Functions
-		unsigned int	size(void){
+		int	size(void) const {
 
 			return (this->_size);
 		}		
@@ -83,7 +86,7 @@ class Array {
 				this->_size = other._size;
 				this->_array = new T[this->_size];
 
-				for (unsigned int i = 0; i < this->_size; ++i) {
+				for (int i = 0; i < this->_size; ++i) {
 					
 					this->_array[i] = other._array[i];
 				}
@@ -91,9 +94,9 @@ class Array {
 			return (*this);
 		}	// Cannonical
 
-		T &	operator[](unsigned int index) {
+		T &	operator[](int index) {
 
-			if (index >= this->_size) {
+			if (index >= this->_size || index < 0) {
 
 				throw std::out_of_range("Index out of bounds");
 			}

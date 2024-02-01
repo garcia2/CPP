@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/23 15:53:50 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 18:15:45 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <ctime>
 #include "Array.hpp"
 
-#define MAX_VAL 760
+#define MAX_VAL 5
 
 int main(int, char**) {
 	
@@ -76,5 +76,26 @@ int main(int, char**) {
 	}
 	
 	delete [] mirror;//
+
+	try {
+		Array<int> negativ(-10);
+	}
+	catch (std::exception & e){
+
+		std::cout << e.what() << std::endl;
+	}
+
+	Array<int> empty(0);
+	
+	try {
+		
+		empty[0] = 0;
+	} catch(const std::exception & e) {
+		
+		std::cerr << "empty: " << e.what() << '\n';
+	}
+
+	
+
 	return 0;
 }

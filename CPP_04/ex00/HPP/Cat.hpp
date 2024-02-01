@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/21 17:15:05 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/25 12:11:07 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Cat : public Animal {
 		virtual	~Cat(void);				// Cannonical
 
 		// Functions
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 
 		// Operators overload
 		Cat &	operator=(Cat const & other); // Cannonical

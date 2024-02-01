@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/25 12:15:19 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/21 17:31:39 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal { 
+class WrongCat : public WrongAnimal { 
 
 	private:
 		
 		// Attributes
-		Brain*		_brain;
 
 		// Functions
 
@@ -40,18 +38,17 @@ class Dog : public Animal {
 	public:
 
 		// Constructors & Destructors
-		Dog(void);				// Cannonical
-		Dog(Dog const & other);	// Cannonical
-		virtual ~Dog(void);				// Cannonical
+		WrongCat(void);				// Cannonical
+		WrongCat(WrongCat const & other);	// Cannonical
+		virtual ~WrongCat(void);				// Cannonical
 
 		// Functions
 		void	makeSound(void) const;
 
 		// Operators overload
-		Dog &	operator=(Dog const & other); // Cannonical
+		WrongCat &	operator=(WrongCat const & other); // Cannonical
 
 		// Getters
-		Brain*		getBrain(void) const;
 
 		// Setters
 

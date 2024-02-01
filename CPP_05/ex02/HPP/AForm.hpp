@@ -57,6 +57,7 @@ class AForm {
 
 		// Getters
 		const std::string &	getName(void) const;
+		bool				getSigned(void) const;
 		int					getCanExecGrade(void) const;
 		int					getCanSignGrade(void) const;
 		virtual void        execute(const Bureaucrat & executor) const = 0;

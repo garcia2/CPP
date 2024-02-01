@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 09:30:24 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/13 22:50:58 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/10/11 11:19:53 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <iostream>
 #include "Contact.hpp"
+#include <iostream>
+#include <string>
 
 class PhoneBook {
 
@@ -38,7 +39,7 @@ class PhoneBook {
 		~PhoneBook(void);
 
 		// Functions
-		int				add_contact(void);
+		void			add_contact(void);
 		void			printContactsLine(int padding) const;
 		void			fill(void);
 		static int		isValidNumber(std::string str);

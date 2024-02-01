@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:21:17 by nicolas           #+#    #+#             */
-/*   Updated: 2023/10/25 12:15:19 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:19:56 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal { 
+class WrongAnimal {
 
 	private:
 		
 		// Attributes
-		Brain*		_brain;
 
 		// Functions
 
@@ -32,6 +29,7 @@ class Dog : public Animal {
 	protected:
 		
 		// Attributes
+		std::string	_type;
 
 		// Functions
 
@@ -40,18 +38,18 @@ class Dog : public Animal {
 	public:
 
 		// Constructors & Destructors
-		Dog(void);				// Cannonical
-		Dog(Dog const & other);	// Cannonical
-		virtual ~Dog(void);				// Cannonical
+		WrongAnimal(void);					// Cannonical
+		WrongAnimal(WrongAnimal const & other);	// Cannonical
+		virtual ~WrongAnimal(void);					// Cannonical
 
 		// Functions
 		void	makeSound(void) const;
 
 		// Operators overload
-		Dog &	operator=(Dog const & other); // Cannonical
+		WrongAnimal &	operator=(WrongAnimal const & other); // Cannonical
 
 		// Getters
-		Brain*		getBrain(void) const;
+		std::string	getType(void) const;
 
 		// Setters
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/19 16:29:26 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 13:49:01 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 void	printData(Data *data) {
 
-	std::cout << "	name: " << data->name << std::endl;
-	std::cout << "	lastname: " << data->lastname << std::endl;
-	std::cout << "	age: " << data->age << std::endl;
-	std::cout << "	is she/he cool ? " << (data->isCool ? "Hell yeah" : "Not that much but it's ok") << std::endl;
+	std::cout << "	Name: " << data->name << std::endl;
+	std::cout << "	Lastname: " << data->lastname << std::endl;
+	std::cout << "	Age: " << data->age << std::endl;
+	std::cout << "	Is she/he cool ? " << (data->isCool ? "Hell yeah" : "Not that much but it's ok") << std::endl;
 }
 
 int main(void) {

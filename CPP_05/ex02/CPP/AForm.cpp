@@ -92,6 +92,11 @@ const std::string &	AForm::getName(void) const {
 	return (this->_name);
 }
 
+bool	AForm::getSigned(void) const {
+
+	return (this->_signed);
+}
+
 int	AForm::getCanSignGrade(void) const {
 
 	return (this->_canSignGrade);

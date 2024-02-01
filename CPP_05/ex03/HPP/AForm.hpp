@@ -50,16 +50,17 @@ class AForm {
 		virtual ~AForm(void);				// Cannonical
 
 		// Functions
-		void	beSigned(Bureaucrat & bureaucrat);
+		void			beSigned(Bureaucrat & bureaucrat);
+		virtual void	execute(const Bureaucrat & executor) const = 0;
 
 		// Operators overload
 		AForm &	operator=(AForm const & other); // Cannonical
 
 		// Getters
 		const std::string &	getName(void) const;
+		bool				getSigned(void) const;
 		int					getCanExecGrade(void) const;
 		int					getCanSignGrade(void) const;
-		virtual void        execute(const Bureaucrat & executor) const = 0;
 		
 
 		// Setters

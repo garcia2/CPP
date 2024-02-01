@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/25 18:28:25 by nigarcia         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:06:02 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,50 +17,71 @@
 
 
 int main(void) {
+
+	std::cout << "	-- TEST CONSTRUCTORS & addNumber() & addNumbers() --" << std::endl;
 	
 	Span span(5);
 	
-	span.addNumber(1); span.addNumber(2); span.addNumber(3); span.addNumber(4);
+	// span.addNumber(1); span.addNumber(2); span.addNumber(3); span.addNumber(4);
+
+	int bigRange[6] = {1, 2, 3, 4, 5, 6};
+	try {
+		span.addNumbers(bigRange, 6);
+	}
+	catch(const std::exception& e) {
+		std::cout << "span: error: " << e.what() << std::endl;
+	}
+	
+
+	int	range1[4] = {1, 2, 3, 4};
+	span.addNumbers(range1, 4);
 
 	Span sp2(span);
 	Span sp3 = span;
+	Span sp7(5);
 
 	span.addNumber(5);
 	sp2.addNumber(6);
 	sp3.addNumber(7);
+	sp7.addNumbers(span.getNumbers());
 	
 	span.toPrint("span");
 	sp2.toPrint("sp2");
 	sp3.toPrint("sp3");
+	sp7.toPrint("sp7");
 
 	std::cout << std::endl;
 
 	/* ************************************************************************** */
 
+	std::cout << "	-- TEST ERROR CASES with addNumber() at _maxSize --" << std::endl;
+
 	try {
 		span.addNumber(0);
 	} 
-	catch (std::exception & e) {
+	catch (std::exception & e){
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 
 	try {
 		sp2.addNumber(0);
 	} 
-	catch (std::exception & e) {
+	catch (std::exception & e){
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 
 	try {
 		sp3.addNumber(0);
 	} 
-	catch (std::exception & e) {
+	catch (std::exception & e){
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 
 	std::cout << std::endl;
 
 	/* ************************************************************************** */
+
+	std::cout << "	-- TEST shortestSpan() & longestSpan() --" << std::endl;
 
 	Span sp4(5);
 	
@@ -74,6 +95,8 @@ int main(void) {
 
 	/* ************************************************************************** */
 
+	std::cout << "	-- TEST ERROR CASES with shortestSpan() & longestSpan() --" << std::endl;
+
 	Span sp5(12);
 	
 	sp5.addNumber(1);
@@ -83,14 +106,14 @@ int main(void) {
 	try {
 		sp5.shortestSpan();
 	} 
-	catch (std::exception & e) {
+	catch (std::exception & e){
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 
 	try {
 		sp5.longestSpan();
 	} 
-	catch (std::exception & e) {
+	catch (std::exception & e){
 		std::cout << "span: error: " << e.what() << std::endl;
 	}
 	
@@ -99,6 +122,8 @@ int main(void) {
 	/* ************************************************************************** */
 
 	int	size = 20000;
+
+	std::cout << "	-- TEST shortestSpan() & longestSpan() with " << size << " RANDOM VALUES --" << std::endl;
 
 	Span sp6(size);
 	

@@ -6,7 +6,7 @@
 /*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 14:42:41 by nigarcia          #+#    #+#             */
-/*   Updated: 2023/10/25 11:45:58 by nigarcia         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:23:14 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,18 @@ void	test1(void) {
 
 	// std::cout << std::endl << "------------------" << std::endl << std::endl;
 
-	// AAnimal	cat1 = Cat();	std::cout << std::endl;
-	// AAnimal	dog1 = Dog();	std::cout << std::endl;
-	Cat	cat1 = Cat();	std::cout << std::endl;
-	std::cout << "This is cat1, his type is "<< cat1.getType() << std::endl;
-	std::cout << "cat1 will make a sound : "; cat1.makeSound();
+	AAnimal*	cat1 = new Cat();	std::cout << std::endl;
+	std::cout << "This is cat1, his type is "<< cat1->getType() << std::endl;
+	std::cout << "cat1 will make a sound : "; cat1->makeSound();
 
 	std::cout << std::endl << "------------------" << std::endl << std::endl;
 
-	AAnimal	*dog1 = new Dog();	std::cout << std::endl;
+	AAnimal*	dog1 = new Dog();	std::cout << std::endl;
 	std::cout << "This is dog1, his type is "<< dog1->getType() << std::endl;
 	std::cout << "dog1 will make a sound : "; dog1->makeSound();
 	
 	delete dog1;
+	delete cat1;
 	// delete Aanimal3;
 }
 

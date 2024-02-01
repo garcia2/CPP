@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nicolas <nicolas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nigarcia <nigarcia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 10:49:31 by nicolas           #+#    #+#             */
-/*   Updated: 2024/01/19 17:26:27 by nicolas          ###   ########.fr       */
+/*   Updated: 2024/01/25 14:17:27 by nigarcia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,18 @@
 
 Base *	generate(void) {
 
-	int randomNumber = std::rand() % 3;
+	int 	randomNumber = std::rand() % 3;
+	bool	print = true;
+	
+	if (print) {
+
+		if (randomNumber == 0)
+			std::cout << "generates A: ";
+		else if (randomNumber == 1)
+			std::cout << "generates B: ";
+		else
+			std::cout << "generates C: ";
+	}
 
 	if (randomNumber == 0)
 		return (new A());
@@ -43,21 +54,21 @@ void	identify(Base * p) {
 void	identify(Base & p) {
 
 	try {
-		dynamic_cast<A &>(p);
+		A	a = dynamic_cast<A &>(p);
 		std::cout << "A" << std::endl;
 		return ;
 	}
 	catch (std::bad_cast &bc) { }
 
 	try {
-		dynamic_cast<B &>(p);
+		B	b = dynamic_cast<B &>(p);
 		std::cout << "B" << std::endl;
 		return ;
 	}
 	catch (std::bad_cast &bc) { }
 
 	try {
-		dynamic_cast<C &>(p);
+		C	c = dynamic_cast<C &>(p);
 		std::cout << "C" << std::endl;
 		return ;
 	}
